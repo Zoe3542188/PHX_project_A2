@@ -2,17 +2,17 @@
 #### install react-native-components and icons with npm:
 ```
 npm i react-native-elements --save
-```
-</br>
-
-```
+``` ```
 npm i --save react-native-vector-icons
 ```
-#### if get "Installing ERROR | Unexpected end of JSON input while parsing near ' : '", try
+#### if get "Installing ERROR | Unexpected end of JSON input while parsing near ' : '", try this first
 ```
 npm cache clean --force
 ```
-before install
+#### If you built other react-native project on your laptop before, then you need to delete all the files in user/library/developer/Xcode/DerivedData/
+#### Or you will get an bundle file notFound err
 
-#### Then do ```react-native start --reset-cache```
-#### Open another Terminal and do ```react-native ios-run```
+#### Then Do 
+```react-native start --reset-cache```
+#### Open another Terminal and do 
+```react-native ios-run```
