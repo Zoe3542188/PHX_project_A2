@@ -40,14 +40,9 @@ loginButton: {
   height: 45,
   marginTop: 10,
 },
-createAccountButton: {
+fbLoginButton: {
   height: 45,
   marginTop: 10,
-  backgroundColor: 'transparent',
-},
-browseButton:{
-  height:45,
-  marginTop:10,
   backgroundColor: 'transparent',
 },
 };
