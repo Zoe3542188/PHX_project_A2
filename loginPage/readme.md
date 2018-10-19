@@ -11,4 +11,4 @@
 #### Then Do 
 ```react-native start --reset-cache```
 #### Open another Terminal and do 
-```react-native ios-run```
+```react-native run-ios```
