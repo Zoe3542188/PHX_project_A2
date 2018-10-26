@@ -12,7 +12,7 @@ export default {
 	  flex: 1,
 	},
 	commentTextInput: {
-	  height: 301,
+	  height: 240,
 	  fontSize: 14,
 	  borderRadius: 5,
 	  borderWidth: 1,

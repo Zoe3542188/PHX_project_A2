@@ -5,7 +5,7 @@ import {Keyboard, Text, View, TextInput, TouchableWithoutFeedback, Alert, Keyboa
 import { Button, CheckBox } from 'react-native-elements';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
-import startMainTab from './startMainTab';
+import {startTabs} from './startMainTab';
 
 export default class LoginScreen extends Component {
   constructor() {
@@ -44,7 +44,7 @@ export default class LoginScreen extends Component {
   }
 
   SubmitPress() {
-    startMainTab();
+    startTabs();
   }
 
 

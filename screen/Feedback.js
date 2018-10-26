@@ -13,7 +13,7 @@ import styles from "./style";
 import { Button, CheckBox } from 'react-native-elements';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
-import startMainTab from './startMainTab';
+import {startTabs} from './startMainTab';
 
 class Feedback extends Component{
 	constructor() {
@@ -47,7 +47,7 @@ class Feedback extends Component{
     );
 	}
 	SubmitPress() {
-    startMainTab();
+    startTabs();
   }
 }
 

@@ -7,6 +7,8 @@ export function registerScreens() {
 	Navigation.registerComponent('Podcasts', () => require('./Podcasts').default);
 	Navigation.registerComponent('Courses', () => require('./Courses').default);
 	Navigation.registerComponent('Feedback', () => require('./Feedback').default);
+	Navigation.registerComponent('Main', () => require('./Main').default);
+	Navigation.registerComponent('LogIn', () => require('./LogIn').default);
 }
 
 // import Welcome from "./screen/Welcome.js";

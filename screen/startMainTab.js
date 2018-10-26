@@ -1,7 +1,6 @@
 import { Navigation } from "react-native-navigation";
 
-const startTabs = () => {
-  Navigation.setRoot({    
+export const startTabs = () => Navigation.setRoot({    
     root: {
         bottomTabs: {
           id: 'BottomTabsId',
@@ -58,6 +57,18 @@ const startTabs = () => {
         }
       }
   });
-}
 
-export default startTabs;
+export const startStacks = () => Navigation.setRoot({
+  root: {
+    stack: {
+      id: 'App',
+      children: [
+        {
+          component: {
+            name: 'Clickme',
+          }
+        }
+    ],
+    }
+  }
+})

@@ -61,4 +61,3 @@ buck-out/
 **/android
 **/ios
 **/node_modules
-./screen/navigation.js
