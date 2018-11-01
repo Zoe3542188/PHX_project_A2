@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Dimensions, TouchableHighlight, Image, FlatList} from 'react-native';
 // Setting a windowSize variable to be used in the styles below.
+import HTMLView from 'react-native-htmlview';
 export default class App extends Component<{}> {
     //an empty array
     state={
@@ -9,14 +10,8 @@ export default class App extends Component<{}> {
 
     fetchData = async () =>{
         //response
-        let base64 = require('base-64');
-        let username = 'appbuphx';
-        let password = '254346b9';
-        let headers = new Headers();
-        headers.append('Authorization', 'Basic' + base64.encode(username + ":" + password));
         const response = await
-            fetch('https://leadershipquotes.mystagingwebsite.com/wp-json/wp/v2/media',{method:'GET',
-                headers: headers,});
+            fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts');
         //posts
         const posts = await response.json();
 
@@ -37,7 +32,7 @@ export default class App extends Component<{}> {
                     keyExtractor={(x,i) =>i}
                     renderItem={({item}) =>
                         <View>
-                            <Text>{item.title.rendered}</Text>
+                            <HTMLView value={item.title.rendered}/>
                         </View>
                     }
                 />
