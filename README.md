@@ -1,7 +1,7 @@
 # PHX_project_A2_Navigation_Feature_Branch
 ###### project for EC601
 #### Introduction
-We are using two kinds of navigator provided by ReactNative</br>
+We are using two kinds of navigator provided by ReactNative, the stack navigator and startab navigator.
 In this feature we display the function of navigate between different screens inside the app.
 ###### Also, you can check our draft UI in this part.
 
