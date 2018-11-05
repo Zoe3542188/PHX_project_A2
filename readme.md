@@ -2,7 +2,7 @@ PHX_project_A2
 =
 ###### project for [EC601](https://www.bu.edu/academics/eng/courses/eng-ec-601/)
 ###### [Our Trello Board](https://trello.com/b/Pe9N73kv/phx-projectboard)
-##### This is an iOS version of BU [PopulationHealthExchange](https://populationhealthexchange.org/) website
+##### A native iOS app for Boston University [PopulationHealthExchange](https://populationhealthexchange.org/) website
 
 #### The app will display:
 1. Institute Information (optional if the page exists on the website, otherwise do not display)
