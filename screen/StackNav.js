@@ -9,12 +9,12 @@ import styles from "./style";
 import {startTabs} from './startMainTab'
 import {Navigation} from 'react-native-navigation';
 
-class Clickme extends Component{
+class StackNav extends Component{
 	static get options() {
 	    return {
 	      topBar: {
 	        title: {
-	          text: 'Webinars'
+	          text: 'Stack'
 	        },
 	      }
 	    };
@@ -38,7 +38,7 @@ class Clickme extends Component{
 		          title="View next screen"
 		        />
 		        <Button
-		          onPress={()=> this.goToScreen('Welcome')}
+		          onPress={()=> this.goToScreen('Main')}
 		          title="Go back"
 		        />
 		        <Button
@@ -50,4 +50,4 @@ class Clickme extends Component{
 	}
 }
 
-export default Clickme;
+export default StackNav;

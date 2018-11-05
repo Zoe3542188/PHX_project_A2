@@ -8,7 +8,9 @@ import styles from "./style";
 import { startTabs, startStacks} from './startMainTab';
 import { Navigation } from "react-native-navigation";
 
-class WelcomeScreen extends Component{
+
+// This is a template for stack navigation
+class StackTemplate extends Component{
 
 	goToScreen = (screenName) =>{
 		Navigation.push(this.props.componentId,{
@@ -28,4 +30,4 @@ class WelcomeScreen extends Component{
 	}
 }
 
-export default WelcomeScreen;
+export default StackTemplate;

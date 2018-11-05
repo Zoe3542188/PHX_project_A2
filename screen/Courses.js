@@ -6,6 +6,7 @@ import {View,
 		} from "react-native";
 import styles from "./style";
 
+// Courses Screen
 class Courses extends Component{
 	render(){
 		return(

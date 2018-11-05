@@ -2,20 +2,22 @@ import {Navigation} from 'react-native-navigation';
 
 export function registerScreens() {
 	Navigation.registerComponent('Welcome', () => require('./Welcome').default);
-	Navigation.registerComponent('Clickme', () => require('./Clickme').default);
+	Navigation.registerComponent('StackNav', () => require('./StackNav').default);
 	Navigation.registerComponent('Webinars', () => require('./Webinars').default);
 	Navigation.registerComponent('Podcasts', () => require('./Podcasts').default);
 	Navigation.registerComponent('Courses', () => require('./Courses').default);
 	Navigation.registerComponent('Feedback', () => require('./Feedback').default);
 	Navigation.registerComponent('Main', () => require('./Main').default);
-	Navigation.registerComponent('LogIn', () => require('./LogIn').default);
+	Navigation.registerComponent('SignUp', () => require('./SignUp').default);
+	Navigation.registerComponent('Fetch', () => require('./Fetch').default);
 }
 
-// import Welcome from "./screen/Welcome.js";
-// import Clickme from "./screen/Clickme.js";
-// import Webinars from "./screen/Webinars.js";
-// import Podcasts from "./screen/Podcasts.js";
-// import Courses from "./screen/Courses.js";
-// import Feedback from "./screen/Feedback.js";
-
-
+import Welcome from "./Welcome.js";
+import StackNav from "./StackNav.js";
+import Webinars from "./Webinars.js";
+import Podcasts from "./Podcasts.js";
+import Courses from "./Courses.js";
+import Feedback from "./Feedback.js";
+import Main from "./Main.js";
+import SignUp from "./SignUp.js";
+import Fetch from "./Fetch.js";

@@ -1,3 +1,4 @@
+// error handling utility for API calls
 var ApiUtils = {  
   checkStatus: function(response) {
     if (response.ok) {

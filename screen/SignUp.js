@@ -7,7 +7,7 @@ import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elemen
 
 import {startTabs} from './startMainTab';
 
-export default class LoginScreen extends Component {
+export default class SignUp extends Component {
   constructor() {
     super();
     this.state = {
