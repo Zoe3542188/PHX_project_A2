@@ -1,3 +1,7 @@
-#### [react-native-navigation v2 installation](https://wix.github.io/react-native-navigation/v2/#/docs/Installing)
-#### [youtube tutorial](https://www.youtube.com/watch?v=osMg869VwFY&list=PLy9JCsy2u97nzztNpiBsJLQF-sixWvMEO)
->##### [Fixing "Multiple Commands Produced" in Xcode 10 for a React Native App](https://www.youtube.com/watch?v=aSPg3UUrMco)
+## Required libraries
+
+### react native fetch blob to download files such as videos [rn-fetch-blob](https://github.com/joltup/rn-fetch-blob)
+### react native vector icons [react-native-vector-icons](https://github.com/oblador/react-native-vector-icons)
+### react native navigation [react-native-navigation](https://github.com/wix/react-native-navigation)
+
+#### Useful link: general information about installing [libraries with native dependencies](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
