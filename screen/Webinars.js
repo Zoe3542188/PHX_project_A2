@@ -2,18 +2,21 @@ import React, { Component } from "react";
 import {View,
 		Text,
 		StyleSheet,
-		Button
+		Platform,
+		Button,
+		WebView
 		} from "react-native";
 import styles from "./style";
+import VideoComponent from './VideoComponent';
 
 class Webinars extends Component{
-	render(){
-		return(
-			<View style={styles.container}>
-				<Text>Watch webinars here</Text>
-			</View>
-		);
-	}
+  render() {
+    return (
+        <View>
+        <VideoComponent />
+        </View>
+    );
+  }
 }
 
 export default Webinars;

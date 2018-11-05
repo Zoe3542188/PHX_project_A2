@@ -12,19 +12,19 @@ export const startTabs = () => Navigation.setRoot({
                   bottomTab: {
                     fontSize: 12,
                     text: 'Main',
-                    icon: require('./home.png')
+                    icon: require('../assets/img/home.png')
                   }
                 }
               },
             },
             {
               component: {
-                name: 'Welcome',
+                name: 'Fetch',
                 options: {
                   bottomTab: {
                     fontSize: 12,
                     text: "Webinars",
-                    icon: require('./webinar.png')
+                    icon: require('../assets/img/webinar.png')
                   }
                 }
               },
@@ -36,7 +36,7 @@ export const startTabs = () => Navigation.setRoot({
                   bottomTab: {
                     text: 'Podcasts',
                     fontSize: 12,
-                    icon: require('./podcast.png')
+                    icon: require('../assets/img/podcast.png')
                   }
                 }
               },
@@ -48,7 +48,7 @@ export const startTabs = () => Navigation.setRoot({
                   bottomTab: {
                     fontSize: 12,
                     text: "Contact us",
-                    icon: require('./feedback.png')
+                    icon: require('../assets/img/feedback.png')
                   }
                 }
               },
@@ -65,7 +65,7 @@ export const startStacks = () => Navigation.setRoot({
       children: [
         {
           component: {
-            name: 'Clickme',
+            name: 'StackNav',
           }
         }
     ],
