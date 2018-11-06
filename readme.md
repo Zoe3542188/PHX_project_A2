@@ -52,7 +52,7 @@ you should able to see this page if you setup successfully.</br>
 #### Features Utilization
 ###### By far, we have two major features has been realized 
 - UI interface with navigators</br>
-[![UI Demo](https://slack-files.com/TCTU28448-FDX0MFRV2-597dabf358)](http://www.youtube.com/watch?v=bFZB7Die13k)
+[![UI Demo](http://img.youtube.com/vi/bFZB7Die13k/0.jpg)](http://www.youtube.com/watch?v=bFZB7Die13k)
 - Fetch data via Rest api from wordpress backend</br>
 ![wp-json](https://github.com/Zoe3542188/PHX_project_A2/blob/Yanling/assets/wp-json.PNG)
 
