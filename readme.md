@@ -2,7 +2,7 @@ PHX_project_A2
 =
 ###### project for [EC601](https://www.bu.edu/academics/eng/courses/eng-ec-601/)
 ###### [Our Trello Board](https://trello.com/b/Pe9N73kv/phx-projectboard)
-##### This is an iOS version of BU [PopulationHealthExchange](https://populationhealthexchange.org/) website
+###### A native iOS app for Boston University [PopulationHealthExchange](https://populationhealthexchange.org/) website
 
 #### The app will display:
 1. Institute Information (optional if the page exists on the website, otherwise do not display)
@@ -22,6 +22,7 @@ PHX_project_A2
 4. react native elements [react-native-elements](https://react-native-training.github.io/react-native-elements)
 
 #### Useful link: general information about installing [libraries with native dependencies](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
+<<<<<<< HEAD
 
 #### Technology Selection
 - Backend:[Wordpress](https://wordpress.com) and MySQL database (provided by our client)
@@ -58,3 +59,5 @@ you should able to see this page if you setup successfully.</br>
 To test these features on your MAC, please go to the specific feature branch and check the readme file under that branch
 - [Navigation Feature](https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Navigation)
 - [Fetch Feature](https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Fetch)
+=======
+>>>>>>> 061dd10a8e6546dd39ceb395e7f7273f4cedb64b
