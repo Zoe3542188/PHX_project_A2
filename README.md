@@ -7,7 +7,7 @@ In this feature we display the function of navigate between different screens in
 
 #### Initialization
 1. Have an initialized ReactNative project, please follow the installation guide [here](https://github.com/Zoe3542188/PHX_project_A2/tree/master#installation)
-2. Install [react-native-navigation v2](https://wix.github.io/react-native-navigation/v2/#/docs/Installing) 
+2. Install [react-native-navigation v2](https://wix.github.io/react-native-navigation) 
 (This step is a little bit tricky, please follow a [video tutorial](https://www.youtube.com/watch?v=osMg869VwFY) if you need)
 3. Install react-native-elements and icons with npm install:
 - `npm i react-native-elements --save`
