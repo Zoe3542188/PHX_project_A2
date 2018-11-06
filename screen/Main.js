@@ -23,15 +23,15 @@ class Main extends Component{
                 <View style={styles.flexColumn}>
                         <Tile
                             imageSrc={require('../assets/img/test.jpg')}
-                            title="The events that are highly recommend by BU PHX (click to see details!)"
+                            title="Landing Page"
                             featured
-                            caption="Organized by College of Engineering"
+                            caption="(under construction)"
                         />
                         <Card style={{height:20, width:50}}
-                            title='The First Post'
+                            title='Event accouncement'
                             image={require('../assets/img/test1.jpg')} >
                             <Text style={{marginBottom: 10}}>
-                               Our newest posted blog for you, hope u like it:)
+                               Event description
                             </Text>
                             <Button
                                 icon={<Icon name='code' color='#ffffff' />}
