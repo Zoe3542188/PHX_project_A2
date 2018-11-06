@@ -17,4 +17,4 @@ In this feature we demonstrate the function that enables navigation between diff
 #### Utilization
 1. add the whole [screen folder](https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Navigation/screen) under your main project folder
 2. Replace [index.js](https://github.com/Zoe3542188/PHX_project_A2/blob/Feature_Navigation/index.js)
-3. Run your app (fist type `react-native start` in a bash terminal and then run `react-native run-ios` in a separate window)
+3. Run your app (first type `react-native start` in a bash terminal and then run `react-native run-ios` in a separate window)
