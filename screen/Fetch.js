@@ -11,8 +11,13 @@ export default class App extends Component<{}> {
 
     fetchData = async () =>{
         //response
+        let base64 = require('base-64');
+        let username = 'appbuphx';
+        let password = '254346b9';
+        let headers = new Headers();
+        headers.append("Authorization", "Basic " + base64.encode("user:password"));
         const response = await
-            fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts',{method:'GET'})
+            fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts',{method:'GET', headers: headers})
               .then(ApiUtils.checkStatus);
         
         //posts
