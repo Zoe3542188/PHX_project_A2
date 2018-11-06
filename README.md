@@ -1,8 +1,8 @@
 # PHX_project_A2_Navigation_Feature_Branch
 ###### project for EC601
 #### Introduction
-We are using two kinds of navigator provided by ReactNative, the stack navigator and startab navigator.
-In this feature we display the function of navigate between different screens inside the app.
+We are using a combination of two navigation options provided by React Native Navigation - stack navigation and tab navigation.
+In this feature we demonstrate the function that enables navigation between different screens inside the app.
 ###### Also, you can check our draft UI in this part.
 
 #### Initialization
@@ -17,4 +17,4 @@ In this feature we display the function of navigate between different screens in
 #### Utilization
 1. add the whole [screen folder](https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Navigation/screen) under your main project folder
 2. Replace [index.js](https://github.com/Zoe3542188/PHX_project_A2/blob/Feature_Navigation/index.js)
-3. Run your app(`react-native start` and `react-native run-ios` in another window)
+3. Run your app (fist type `react-native start` in a bash terminal and then run `react-native run-ios` in a separate window)
