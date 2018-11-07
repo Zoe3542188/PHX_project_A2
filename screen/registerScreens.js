@@ -11,6 +11,8 @@ export function registerScreens() {
 	Navigation.registerComponent('SignUp', () => require('./SignUp').default);
 	Navigation.registerComponent('Fetch', () => require('./Fetch').default);
 	Navigation.registerComponent('getMediaURL', () => require('./getMediaURL').default);
+	Navigation.registerComponent('VideoComponent', () => require('./VideoComponent').default);
+	Navigation.registerComponent('audioStream', () => require('./audioStream').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -23,3 +25,5 @@ import Main from "./Main.js";
 import SignUp from "./SignUp.js";
 import Fetch from "./Fetch.js";
 import getMediaURL from "./getMediaURL.js";
+import VideoComponent from "./VideoComponent.js";
+import audioStream from "./audioStream.js";

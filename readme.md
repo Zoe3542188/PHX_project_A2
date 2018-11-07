@@ -22,6 +22,8 @@ PHX_project_A2
 3. react native navigation v2 [react-native-navigation](https://github.com/wix/react-native-navigation)
 4. react native elements [react-native-elements](https://react-native-training.github.io/react-native-elements)
 5. react native video [react-native-video](https://www.npmjs.com/package/react-native-video)
+6. react native audio toolkit [react-native-audio-toolkit](https://github.com/futurice/react-native-audio-toolkit)
+7. react native audio streamer [react-native-audio-streamer](https://github.com/indiecastfm/react-native-audio-streamer)
 
 #### Useful link: general information about installing [libraries with native dependencies](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
 

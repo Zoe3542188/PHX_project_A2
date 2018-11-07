@@ -12,9 +12,9 @@ import VideoComponent from './VideoComponent';
 class Webinars extends Component{
   render() {
     return (
-      <View style={styles.container}>
-        <Text>View Courses here</Text>
-      </View>
+        <View>
+        <VideoComponent />
+        </View>
     );
   }
 }
@@ -23,7 +23,8 @@ export default Webinars;
 
 
       
-        // <View>
-        // <VideoComponent />
-        // </View>
 
+
+      <View style={styles.container}>
+        <Text>View Courses here</Text>
+      </View>

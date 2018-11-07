@@ -10,7 +10,7 @@ export default class VideoComponent extends React.Component {
   renderVideo () {
       return(
         <Video
-          source={{uri: ""}}
+          source={{uri: "https://github.com/Zoe3542188/PHX_project_A2/blob/master/assets/demo.mp4"}}
           style={{ width: 800, height: 800 }}
           muted={true}
           repeat={true}
