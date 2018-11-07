@@ -4,12 +4,13 @@ import { View, StyleSheet } from 'react-native'
 import Video from 'react-native-video'
 import styles from "./style";
 
+// VideoComponent plays video within the app
 export default class VideoComponent extends React.Component {
 
   renderVideo () {
       return(
         <Video
-          source={{uri: "https://www.youtube.com/embed/60hOLAGdOi8?rel=0&amp;showinfo=0%22%20width=%22320%22%20height=%22180%22%20frameborder=%220%22%20allowfullscreen=%22allowfullscreen"}}
+          source={{uri: ""}}
           style={{ width: 800, height: 800 }}
           muted={true}
           repeat={true}
