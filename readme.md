@@ -1,10 +1,11 @@
 PHX_project_A2
 =
-###### project for [EC601](https://www.bu.edu/academics/eng/courses/eng-ec-601/)
+###### Group project for [EC601](https://www.bu.edu/academics/eng/courses/eng-ec-601/)
 ###### [Our Trello Board](https://trello.com/b/Pe9N73kv/phx-projectboard)
-###### A native iOS app for Boston University [PopulationHealthExchange](https://populationhealthexchange.org/) website
+###### A native iOS app for Boston University's Population Health Exchange (PHX) [website](https://populationhealthexchange.org/) 
 
 #### The app will display:
+0. An sign up page with the option to sign up for the newsletter.
 1. Institute Information (optional if the page exists on the website, otherwise do not display)
 2. Events (displays page from the website, we will create a simplified version)
 3. Podcasts (option to download)
