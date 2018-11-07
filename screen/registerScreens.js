@@ -13,6 +13,7 @@ export function registerScreens() {
 	Navigation.registerComponent('getMediaURL', () => require('./getMediaURL').default);
 	Navigation.registerComponent('VideoComponent', () => require('./VideoComponent').default);
 	Navigation.registerComponent('audioStream', () => require('./audioStream').default);
+	Navigation.registerComponent('AppContainer', () => require('./AppContainer').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -27,3 +28,4 @@ import Fetch from "./Fetch.js";
 import getMediaURL from "./getMediaURL.js";
 import VideoComponent from "./VideoComponent.js";
 import audioStream from "./audioStream.js";
+import AppContainer from "./AppContainer.js";

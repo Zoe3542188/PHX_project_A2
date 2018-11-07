@@ -12,6 +12,7 @@
     "react-native": "0.57.3",
     "react-native-audio-streamer": "0.0.9",
     "react-native-audio-toolkit": "^1.0.6",
+    "react-native-button": "^2.3.0",
     "react-native-elements": "^0.19.1",
     "react-native-navigation": "^2.0.2598",
     "react-native-sound": "^0.10.9",

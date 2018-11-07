@@ -60,3 +60,6 @@ buck-out/
 **/android
 **/ios
 **/node_modules
+
+# audio file
+./screen/test.m4a

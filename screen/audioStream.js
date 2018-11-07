@@ -3,31 +3,53 @@ import {View,
 		Text,
 		StyleSheet,
 		Button,
-		ViewPropTypes
+		ViewPropTypes,
+		TouchableHighlight
 		} from "react-native";
+import {
+    Player,
+    Recorder,
+    MediaStates
+} from 'react-native-audio-toolkit';
 import styles from "./style";
-import PropTypes from 'prop-types';
-
-import RNAudioStreamer from 'react-native-audio-streamer';
 
 // stream podcast
 class audioStream extends Component{
 
-	// constructor () {
-	// 	super();
-	// 	this.player = null;
-	// }
+  constructor() {
+    super();
+    this.state = {
+      disabled: false
+    };
+  }
+	stream() {
+	  // Disable button while recording and playing back
+	  this.setState({disabled: true});
 
-	reactAudioStream = () =>{
-			RNAudioStreamer.setUrl("https://populationhealthexchange.org/wp-content/podcasts/fa/Free_Associations_Episode_34.mp3");
-			RNAudioStreamer.play();
+	  // Start recording
+	  let rec = new Recorder("filename.mp4").record();
+
+	  // Stop recording after approximately 3 seconds
+	  setTimeout(() => {
+	    rec.stop((err) => {
+	      // NOTE: In a real situation, handle possible errors here
+
+	      // Play the file after recording has stopped
+	      new Player("filename.mp4")
+	      .play()
+	      .on('ended', () => {
+	        // Enable button again after playback finishes
+	        this.setState({disabled: false});
+	      });
+	    });
+	  }, 3000);
 	}
 
 	render(){
 		return(
 			<View style={styles.container}>
         <Button
-          onPress={this.reactAudioStream}
+          onPress={()=>this.stream()}
           title="Listen to podcast"
         />			        			
 			</View>
