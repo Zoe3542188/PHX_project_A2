@@ -13,7 +13,7 @@ export default class App extends Component<{}> {
     fetchData = async () =>{
         //response
         const response = await
-            fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts');
+            fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts?per_page=60');
         //posts
         const posts = await response.json();
         var x;
@@ -26,7 +26,7 @@ export default class App extends Component<{}> {
                 url = url.concat(single_url)+'\n'+'\n';
             }
             catch(err){
-                url = "url";
+                url = url+'none'+'\n'+'\n';
             }
         }
         this.setState({data:url});
