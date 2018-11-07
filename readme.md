@@ -31,7 +31,7 @@ PHX_project_A2
 - Access to Backend data:[Rest API](https://www.restapitutorial.com/)
 - Developer Environment: Xcode 10
 
-#### System Diagram0.jpg
+#### System Diagram
 ![System Diagram](https://raw.githubusercontent.com/Zoe3542188/PHX_project_A2/Yanling/assets/SD_PHX.PNG)
 
 #### Installation
