@@ -23,6 +23,8 @@ class Feedback extends Component{
 
     }
   }
+
+  // comment here
   render() {
     return (
     	<ScrollView>
@@ -31,14 +33,12 @@ class Feedback extends Component{
 	        <View style={styles.loginScreenContainer}>
 	          <View style={styles.loginFormView}>
 
-	          // Feed back form - name, email and comment
 	          <Text style={styles.logoText}> We want to hear from you! </Text>
 	            <TextInput placeholder="First Name" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
 	            <TextInput placeholder="Last Name" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
 	            <TextInput placeholder="Email address" placeholderColor="#c4c3cb" style={styles.loginFormTextInput} />
 	            <TextInput placeholder="Please share any feedback" placeholderColor="#c4c3cb" style={styles.commentTextInput} />
 
-	            // Submit button to send feedback. TODO 
 	            <Button
 	              buttonStyle={styles.SubmitButton}
 	              onPress={() => this.SubmitPress()}

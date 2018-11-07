@@ -10,6 +10,7 @@ export function registerScreens() {
 	Navigation.registerComponent('Main', () => require('./Main').default);
 	Navigation.registerComponent('SignUp', () => require('./SignUp').default);
 	Navigation.registerComponent('Fetch', () => require('./Fetch').default);
+	Navigation.registerComponent('getMediaURL', () => require('./getMediaURL').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -21,3 +22,4 @@ import Feedback from "./Feedback.js";
 import Main from "./Main.js";
 import SignUp from "./SignUp.js";
 import Fetch from "./Fetch.js";
+import getMediaURL from "./getMediaURL.js";

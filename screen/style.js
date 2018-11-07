@@ -1,3 +1,4 @@
+// add all styles here
 const React = require("react-native");
 
 const { StyleSheet } = React;

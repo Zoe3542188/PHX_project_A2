@@ -23,15 +23,15 @@ class Main extends Component{
                 <View style={styles.flexColumn}>
                         <Tile
                             imageSrc={require('../assets/img/test.jpg')}
-                            title="The events that are highly recommend by BU PHX (click to see details!)"
+                            title="Landing Page"
                             featured
-                            caption="Organized by College of Engineering"
+                            caption="(under development)"
                         />
                         <Card style={{height:20, width:50}}
-                            title='The First Post'
+                            title='Event announcement'
                             image={require('../assets/img/test1.jpg')} >
                             <Text style={{marginBottom: 10}}>
-                               Our newest posted blog for you, hope u like it:)
+                               Event details
                             </Text>
                             <Button
                                 icon={<Icon name='code' color='#ffffff' />}
@@ -40,22 +40,22 @@ class Main extends Component{
                                 title='RSVP NOW' />
                         </Card>
                         <Card style={{height:20, width:50}}
-                              title='The First Post'
+                              title='Winter Institute'
                               image={require('../assets/img/test2.jpg')} >
                             <Text style={{marginBottom: 10}}>
-                                Our newest posted blog for you, hope u like it:)
+                                Upcoming workshops and courses
                             </Text>
                             <Button
                                 icon={<Icon name='code' color='#ffffff' />}
                                 backgroundColor='#3D6DCC'
                                 buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                                title='RSVP NOW' />
+                                title='View all courses' />
                         </Card>
                         <Card style={{height:20, width:50}}
-                              title='The First Post'
+                              title='Another event'
                               image={require('../assets/img/test.jpg')} >
                             <Text style={{marginBottom: 10}}>
-                                Our newest posted blog for you, hope u like it:)
+                                More details will be announced soon
                             </Text>
                             <Button
                                 icon={<Icon name='code' color='#ffffff' />}
@@ -65,13 +65,13 @@ class Main extends Component{
                         </Card>
                         <Tile
                             imageSrc={require('../assets/img/test2.jpg')}
-                            title="The other style"
+                            title="Blog posts"
                             contentContainerStyle={{ height: 100}}
                         >
                             <View
                                 style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-start' }}
                             >
-                                <Text>This is the contents for this article</Text>
+                                <Text>(display contents here)</Text>
                             </View>
                         </Tile>
                 </View>

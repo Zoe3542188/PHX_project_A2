@@ -1,5 +1,6 @@
 import { Navigation } from "react-native-navigation";
 
+// create tab navigation at the bottom of the screen
 export const startTabs = () => Navigation.setRoot({    
     root: {
         bottomTabs: {
@@ -19,7 +20,7 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                name: 'Fetch',
+                name: 'getMediaURL',
                 options: {
                   bottomTab: {
                     fontSize: 12,
