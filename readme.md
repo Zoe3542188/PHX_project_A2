@@ -55,6 +55,7 @@ you should able to see this page if you setup successfully.</br>
 ###### By far, we have two major features has been realized 
 - UI interface with navigators</br>
 ![initPage](https://github.com/Zoe3542188/PHX_project_A2/blob/master/assets/demo.gif | width=100)
+<img src="https://github.com/Zoe3542188/PHX_project_A2/blob/master/assets/demo.gif" width="100">
 - Fetch data via Rest api from wordpress backend</br>
 ![wp-json](https://github.com/Zoe3542188/PHX_project_A2/blob/Yanling/assets/wp-json.PNG)
 
