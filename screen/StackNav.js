@@ -14,7 +14,7 @@ class StackNav extends Component{
 	    return {
 	      topBar: {
 	        title: {
-	          text: 'Stack'
+	          text: 'Stack Navigation'
 	        },
 	      }
 	    };
@@ -32,9 +32,8 @@ class StackNav extends Component{
 	render(){
 		return(
 			<View style={styles.container}>
-				<Text>Welcome here!</Text>
 		        <Button
-		          onPress={()=> this.goToScreen('Webinars')}
+		          onPress={()=> this.goToScreen('Welcome')}
 		          title="View next screen"
 		        />
 		        <Button

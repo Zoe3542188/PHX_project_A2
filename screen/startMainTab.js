@@ -20,7 +20,7 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                name: 'getMediaURL',
+                name: 'Welcome',
                 options: {
                   bottomTab: {
                     fontSize: 12,
@@ -32,7 +32,7 @@ export const startTabs = () => Navigation.setRoot({
             },                        
             {
               component: {
-                name: 'Podcasts',
+                name: 'getMediaURL',
                 options: {
                   bottomTab: {
                     text: 'Podcasts',
