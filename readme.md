@@ -57,6 +57,6 @@ you should able to see this page if you setup successfully.</br>
 <img src="https://github.com/Zoe3542188/PHX_project_A2/blob/master/assets/demo.gif" width="300">
 - Fetch data via Rest api from wordpress backend</br>
 <img src="https://github.com/Zoe3542188/PHX_project_A2/blob/Yanling/assets/wp-json.PNG" width="300"></br>
-To test these features on your MAC, please go to the specific feature branch and check the readme file under that branch
+To test these features on your MAC, please go to the specific feature branch and check the readme file under that branch</br>
 <a href="https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Navigation">*Navigation Feature</a></br>
 <a href="https://github.com/Zoe3542188/PHX_project_A2/tree/Feature_Fetch">*Fetch Feature</a>
