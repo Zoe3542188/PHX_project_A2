@@ -36,7 +36,7 @@ PHX_project_A2
 - Developer Environment: Xcode 10
 
 #### System Diagram
-![System Diagram](https://raw.githubusercontent.com/Zoe3542188/PHX_project_A2/Yanling/assets/SD_PHX.PNG)
+![System Diagram](https://raw.githubusercontent.com/Zoe3542188/PHX_project_A2/Yanling/assets/SD_PHX.PNG?token=ASU62-AAAOxqZcAvv12ggj9Xoh-zEmb2ks5b7f4twA%3D%3D)
 
 #### Installation
 ###### We are still developing the app, if you want to see our developer version, please follow these steps:
