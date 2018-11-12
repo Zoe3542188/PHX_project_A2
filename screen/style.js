@@ -27,7 +27,7 @@ export default{
 	},
 
 	flatListItem: {
-        color: 'black',
+        color: '#1f201f',
         padding: 5,
         fontSize: 16,  
 	},
