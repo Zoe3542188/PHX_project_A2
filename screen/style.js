@@ -32,6 +32,10 @@ const { StyleSheet } = React;
  	  marginTop: 5,
  	  marginBottom: 5,
  	},	
+ 	image: {
+    	width: 200,
+    	height: 200,
+ 	 }, 	
  	flexRow: {
         flexDirection:'row',
         height:150,
@@ -100,4 +104,16 @@ const { StyleSheet } = React;
  	  height: 45,
  	  marginTop: 10,
  	},
+	text: {
+  	color: '#FFFFFF',
+  	fontSize: 20,
+	},
+	title: {
+    fontSize: 28,
+    fontWeight: 'bold',
+    color: 'white',
+    backgroundColor: 'transparent',
+    textAlign: 'center',
+    marginTop: 16,
+ 	}, 	
  };
