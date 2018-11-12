@@ -42,6 +42,18 @@ export const startTabs = () => Navigation.setRoot({
                 }
               },
             },
+           {
+              component: {
+                name: 'Events',
+                options: {
+                  bottomTab: {
+                    fontSize: 12,
+                    text: "Events",
+                    icon: require('../assets/img/calendar.png')
+                  }
+                }
+              },
+            },             
             {
               component: {
                 name: 'Feedback',
@@ -66,7 +78,7 @@ export const startStacks = () => Navigation.setRoot({
       children: [
         {
           component: {
-            name: 'audioStack',
+            name: 'perspStack',
           }
         }
     ],

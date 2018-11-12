@@ -11,27 +11,29 @@ import {View,
 		} from "react-native";
 import styles from "./style";
 import { Navigation } from "react-native-navigation";
+import {startStacks} from './startMainTab'
 
 console.disableYellowBox = true;
 
 class FlatListItem extends Component {
-    render() {          
-        return (
-        	<Card style={{height:20, width:50}}
-                title={this.props.item.title}
-                image={{uri:this.props.item.img_url}
-                } >
-                <Text style={{marginBottom: 10}}>
-                {this.props.item.description}
-                </Text>
-                <Button
-                icon={<Icon name='code' color='#ffffff' />}
-                backgroundColor='#3D6DCC'
-                buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
-                title='See more' />
-                </Card>
-        );
-    }
+  render() {          
+    return (
+    	<Card style={{height:20, width:50}}
+        title={this.props.item.title}
+        image={{uri:this.props.item.img_url}
+        } >
+        <Text style={{marginBottom: 10}}>
+        {this.props.item.description}
+        </Text>
+        <Button onPress={startStacks}
+            icon={<Icon name='code' color='#ffffff' />}
+            backgroundColor='#3D6DCC'
+            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+            title='See more' 
+        />
+        </Card>
+    );
+  }
 }
 
 

@@ -12,14 +12,13 @@ import {
 } from 'react-native-audio-toolkit';  
 import {startStacks, startTabs} from './startMainTab'
 import {Navigation} from 'react-native-navigation';
-import {FlatListItem} from './displayPodList';
 
-class audioStack extends Component{
+class perspStack extends Component{
 	static get options() {
 	    return {
 	      topBar: {
 	        title: {
-	          text: 'Podcast'
+	          text: 'PHX Perspectives'
 	        },
 	      }
 	    };
@@ -32,19 +31,11 @@ class audioStack extends Component{
 		})
 	}
 
-	streamAudio() {
-    	new Player(podcast.item.podcast_url).play();
-  	}
-
 	render(){
 		return(
 			<View style={styles.container}>
 		        <Button
-		          onPress={()=> this.streamAudio()}
-		          title="Stream podcast"
-		        />
-		        <Button
-		          onPress={()=> this.goToScreen('displayPodList')}
+		          onPress={()=> this.goToScreen('Main')}
 		          title="Go back"
 		        />
 		        <Button
@@ -56,4 +47,4 @@ class audioStack extends Component{
 	}
 }
 
-export default audioStack;
+export default perspStack;

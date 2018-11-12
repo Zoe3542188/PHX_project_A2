@@ -20,7 +20,7 @@ import { startTabs, startStacks} from './startMainTab';
 
 console.disableYellowBox = true;
 
-export const audioStack = () => Navigation.setRoot({
+export const startAudioStack = () => Navigation.setRoot({
   root: {
     stack: {
       id: 'App',
@@ -39,12 +39,8 @@ class FlatListItem extends Component {
 
   stream() {
     new Player(this.props.item.podcast_url).play();
-    this.newfunc();
   }
 
-  newfunc(){
-    startStacks
-  }
   render() {          
     return (
       <TouchableOpacity onPress={()=>this.stream()} style={{
