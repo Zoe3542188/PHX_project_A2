@@ -20,7 +20,7 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                name: 'VideoComponent',
+                name: 'Webinars',
                 options: {
                   bottomTab: {
                     fontSize: 12,
@@ -32,7 +32,7 @@ export const startTabs = () => Navigation.setRoot({
             },                        
             {
               component: {
-                name: 'audioStream',
+                name: 'displayPodList',
                 options: {
                   bottomTab: {
                     text: 'Podcasts',

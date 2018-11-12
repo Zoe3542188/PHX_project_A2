@@ -14,6 +14,7 @@ export function registerScreens() {
 	Navigation.registerComponent('VideoComponent', () => require('./VideoComponent').default);
 	Navigation.registerComponent('audioStream', () => require('./audioStream').default);
 	Navigation.registerComponent('AppContainer', () => require('./AppContainer').default);
+	Navigation.registerComponent('displayPodList', () => require('./displayPodList').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -29,3 +30,4 @@ import getMediaURL from "./getMediaURL.js";
 import VideoComponent from "./VideoComponent.js";
 import audioStream from "./audioStream.js";
 import AppContainer from "./AppContainer.js";
+import displayPodList from "./displayPodList.js";
