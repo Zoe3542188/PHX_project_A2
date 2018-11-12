@@ -19,31 +19,33 @@ import { Navigation } from "react-native-navigation";
 import { startTabs, startStacks} from './startMainTab';
 
 
-// export const audioStack = () => Navigation.setRoot({
-//   root: {
-//     stack: {
-//       id: 'App',
-//       children: [
-//         {
-//           component: {
-//             name: 'StackNav',
-//           }
-//         }
-//     ],
-//     }
-//   }
-// })
+export const audioStack = () => Navigation.setRoot({
+  root: {
+    stack: {
+      id: 'App',
+      children: [
+        {
+          component: {
+            name: 'displayPodList',
+          }
+        }
+    ],
+    }
+  }
+})
 
 class FlatListItem extends Component {
-  static get options() {
-      return {
-        topBar: {
-          title: {
-            text: 'Stream podcast'
-          },
-        }
-      };
-    }
+
+
+  // static get options() {
+  //     return {
+  //       topBar: {
+  //         title: {
+  //           text: 'Stream podcast'
+  //         },
+  //       }
+  //     };
+  //   }
   goToScreen = (screenName) =>{
     Navigation.push(this.props.componentId,{
       component:{
@@ -51,9 +53,9 @@ class FlatListItem extends Component {
       }
     })
   }
-  backFromScreen = () =>{
-    Navigation.pop(this.props.componentId)
-  } 
+  // backFromScreen = () =>{
+  //   Navigation.pop(this.props.componentId)
+  // } 
 
 
   stream() {
@@ -62,7 +64,7 @@ class FlatListItem extends Component {
 
   render() {          
     return (
-      <TouchableOpacity onPress={()=>this.stream()} style={{
+      <TouchableOpacity onPress={startStacks, } style={{
         flex: 1,
         backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'                
         }}>
