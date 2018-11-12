@@ -56,13 +56,13 @@ class FlatListItem extends Component {
   } 
 
 
-  _onPress() {
+  stream() {
     new Player(this.props.item.podcast_url).play();
   }
 
   render() {          
     return (
-      <TouchableOpacity onPress={this.goToScreen('Courses')} style={{
+      <TouchableOpacity onPress={()=>this.stream()} style={{
         flex: 1,
         backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'                
         }}>
