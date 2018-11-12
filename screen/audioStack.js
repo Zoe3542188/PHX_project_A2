@@ -5,9 +5,14 @@ import {View,
 		Button
 		} from "react-native";
 import styles from "./style";
-
+import {
+    Player,
+    Recorder,
+    MediaStates
+} from 'react-native-audio-toolkit';  
 import {startTabs} from './startMainTab'
 import {Navigation} from 'react-native-navigation';
+import {FlatListItem} from './displayPodList';
 
 class audioStack extends Component{
 	static get options() {
@@ -26,6 +31,11 @@ class audioStack extends Component{
 			}
 		})
 	}
+
+	streamAudio() {
+    	new Player(FlatListItem.props.item.podcast_url).play();
+  	}
+
 	render(){
 		return(
 			<View style={styles.container}>

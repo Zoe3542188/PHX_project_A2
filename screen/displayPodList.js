@@ -39,11 +39,15 @@ class FlatListItem extends Component {
 
   stream() {
     new Player(this.props.item.podcast_url).play();
+    this.newfunc();
   }
 
+  newfunc(){
+    startStacks
+  }
   render() {          
     return (
-      <TouchableOpacity onPress={startStacks} style={{
+      <TouchableOpacity onPress={()=>this.stream()} style={{
         flex: 1,
         flexDirection:'column',
         backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'}}>
