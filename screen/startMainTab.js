@@ -20,7 +20,7 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                name: 'Welcome',
+                name: 'Webinars',
                 options: {
                   bottomTab: {
                     fontSize: 12,
@@ -66,7 +66,7 @@ export const startStacks = () => Navigation.setRoot({
       children: [
         {
           component: {
-            name: 'StackNav',
+            name: 'audioStack',
           }
         }
     ],

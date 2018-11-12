@@ -11,6 +11,7 @@ export function registerScreens() {
 	Navigation.registerComponent('SignUp', () => require('./SignUp').default);
 	Navigation.registerComponent('VideoComponent', () => require('./VideoComponent').default);
 	Navigation.registerComponent('audioStream', () => require('./audioStream').default);
+	Navigation.registerComponent('audioStack', () => require('./audioStack').default);
 	Navigation.registerComponent('AppContainer', () => require('./AppContainer').default);
 	Navigation.registerComponent('displayPodList', () => require('./displayPodList').default);
 }
@@ -25,5 +26,6 @@ import Main from "./Main.js";
 import SignUp from "./SignUp.js";
 import VideoComponent from "./VideoComponent.js";
 import audioStream from "./audioStream.js";
+import audioStack from "./audioStack.js";
 import AppContainer from "./AppContainer.js";
 import displayPodList from "./displayPodList.js";

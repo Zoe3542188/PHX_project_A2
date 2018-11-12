@@ -9,44 +9,63 @@ import {View,
 		Image,
 		TouchableOpacity
 		} from "react-native";
+import {
+    Player,
+    Recorder,
+    MediaStates
+} from 'react-native-audio-toolkit';    
 import styles from "./style";
 import { Navigation } from "react-native-navigation";
+import { startTabs, startStacks} from './startMainTab';
 
 console.disableYellowBox = true;
 
-class FlatListItem extends Component {
-	goToScreen = (screenName) =>{
-		Navigation.push(this.props.componentId,{
-			component:{
-				name: screenName
-			}
-		})
-	};
-    render() {          
-        return (
-        	<TouchableOpacity style={{
-                flex: 1,
-                flexDirection:'column',
-                backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'}}>
-	          	<View style={{
-	          	  	flex:1,
-	          	  	flexDirection:'row'}}> 
-	          		<Image
-	          	  		source={{uri:this.props.item.img_url}}
-	          	  		style={{width:100, height:100, margin:5}}
-	          		/>
-		         	<View style={{
-		         		flex:1,
-		         		flexDirection:'column',
-		         		height:100
-		         	}}>
-		              <Text style={styles.flatListTitle}>{this.props.item.short_title}</Text>
-		              <Text style={styles.flatListItem}>{this.props.item.title}</Text>
-		            </View>
-	            </View>
-        	</TouchableOpacity>
-        );
+export const audioStack = () => Navigation.setRoot({
+  root: {
+    stack: {
+      id: 'App',
+      children: [
+        {
+          component: {
+            name: 'displayPodList',
+          }
+        }
+    ],
     }
+  }
+})
+
+class FlatListItem extends Component {
+
+  stream() {
+    new Player(this.props.item.podcast_url).play();
+  }
+
+  render() {          
+    return (
+      <TouchableOpacity onPress={startStacks} style={{
+        flex: 1,
+        flexDirection:'column',
+        backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'}}>
+      	<View style={{
+      	  	flex:1,
+      	  	flexDirection:'row'}}> 
+      		<Image
+      	  		source={{uri:this.props.item.img_url}}
+      	  		style={{width:100, height:100, margin:5}}
+      		/>
+         	<View style={{
+         		flex:1,
+         		flexDirection:'column',
+         		height:100
+         	  }}>
+            <Text style={styles.flatListTitle}>{this.props.item.short_title}</Text>
+            <Text style={styles.flatListItem}>{this.props.item.title}</Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
+  }
 }
 
 

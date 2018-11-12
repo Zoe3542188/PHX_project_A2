@@ -5,14 +5,15 @@ import {View,
 		Button
 		} from "react-native";
 import styles from "./style";
+import VideoComponent from './VideoComponent';
 
 // Courses Screen
 class Courses extends Component{
 	render(){
 		return(
-			<View style={styles.container}>
-				<Text>View Courses here</Text>
-			</View>
+        <View>
+        	<VideoComponent />
+        </View>
 		);
 	}
 }

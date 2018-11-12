@@ -33,8 +33,8 @@ class FlatListItem extends Component {
 		         		flexDirection:'column',
 		         		height:100
 		         	}}>
-		              <Text style={styles.flatListTitle}>{this.props.item.short_title}</Text>
-		              <Text style={styles.flatListItem}>{this.props.item.title}</Text>
+		              <Text style={styles.flatListTitleWeb}>{this.props.item.short_title}</Text>
+		              <Text style={styles.flatListItemWeb}>{this.props.item.title}</Text>
 		            </View>
 	            </View>
                 <View style={{
