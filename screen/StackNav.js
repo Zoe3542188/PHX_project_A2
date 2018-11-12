@@ -37,7 +37,7 @@ class StackNav extends Component{
 		          title="View next screen"
 		        />
 		        <Button
-		          onPress={()=> this.goToScreen('Main')}
+		          onPress={()=> this.goToScreen('displayPodList')}
 		          title="Go back"
 		        />
 		        <Button

@@ -20,7 +20,7 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                name: 'Webinars',
+                name: 'Welcome',
                 options: {
                   bottomTab: {
                     fontSize: 12,
