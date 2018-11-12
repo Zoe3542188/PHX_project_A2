@@ -5,15 +5,16 @@ PHX_project_A2
 ###### A native iOS app for Boston University's Population Health Exchange (PHX) [website](https://populationhealthexchange.org/) 
 
 #### The app will display:
-0. An sign up page with the option to sign up for the newsletter.
-1. Institute Information (optional if the page exists on the website, otherwise do not display)
-2. Events (displays page from the website, we will create a simplified version)
-3. Podcasts (option to download)
-4. Webinars (view live or stream recordings, option to download recordings)
-5. Practically Speaking (option to download)
-6. Blogs (option to download)
-7. My Downloads (all of the above that have the option to download; once downloaded, objects should be easy to delete from the app and from the phone)
-8. Feedback (goes to email?)
+0. An introduction to the app.
+1. An sign up page with the option to sign up for the newsletter.
+2. Institute Information (optional if the page exists on the website, otherwise do not display)
+3. Events (displays page from the website, we will create a simplified version)
+4. Podcasts (option to download)
+5. Webinars (view live or stream recordings, option to download recordings)
+6. Practically Speaking (option to download)
+7. Blogs (option to download)
+8. My Downloads (all of the above that have the option to download; once downloaded, objects should be easy to delete from the app and from the phone)
+9. Feedback (goes to email?)
 
 #### Required libraries
 
