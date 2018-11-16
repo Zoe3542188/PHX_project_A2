@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import {View,
 		Image,
 		Text,
-		StyleSheet
+		StyleSheet,
+		Linking
 		} from "react-native";
 import styles from "./style";
 import {
@@ -33,6 +34,10 @@ class audioStack extends Component{
     new Player(this.props.podcast_url).play();
   }
 
+  download() {
+  	Linking.openURL(this.props.itunes_url);
+  }
+
 	render(){
 		return(
 			<View style={styles.container}>
@@ -43,26 +48,38 @@ class audioStack extends Component{
 	      	  		source={{uri:this.props.img_url}}
 	      	  		style={{width:300, height:300, margin:5}}
 	      		/>
-				<Text style = {{margin: 30}}>
+				<Text style = {{margin: 30, marginTop:5, marginBottom:5}}>
 					{this.props.description}
-				</Text>	      		
-		        <Button
+				</Text>	 
+				<View style={{flex:1, flexDirection:'row'}}>   		
+			        <Button
+			      	  large
+			      	  icon={{name: 'podcast', type: 'font-awesome', size:12}}
+			          buttonStyle = {{width: 160, height: 60, margin:5, borderRadius:6,marginLeft:5}}	
+			          textStyle={{fontSize: 13 }}	      	  		      	  
+			      	  backgroundColor="#3897f1"
+			          onPress={()=> this.stream()}
+			          title="Play podcast"
+			        />
+			        <Button
+			      	  large
+			      	  icon={{name: 'download', type: 'font-awesome', size:12}}
+			          buttonStyle = {{width: 160, height: 60,margin:5, borderRadius:6, marginLeft:-25}}	
+			          textStyle={{fontSize: 13 }}	      	  
+			      	  backgroundColor="#3897f1"
+			          onPress={()=> this.download()}
+			          title="Download podcast"
+			        />
+			    </View>	  
+			    <Button
 		      	  large
-		      	  icon={{name: 'podcast', type: 'font-awesome'}}
-		          style = {{width: 300, height: 80}}		      	  		      	  
-		      	  backgroundColor="#3897f1"
-		          onPress={()=> this.stream()}
-		          title="Play podcast"
-		        />
-		        <Button
-		      	  large
-		      	  icon={{name: 'download', type: 'font-awesome'}}
-		          style = {{width: 300, height: 80}}		      	  		      	  
-		      	  backgroundColor="#3897f1"
-		          title="Download podcast"
+		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
+		          buttonStyle = {{width: 180, height: 60}}	
+		          textStyle={{fontSize: 13, color:'black'}}	      	  		      	  
+		      	  backgroundColor="white"
+		          title="Back to main"
 		          onPress={()=> this.goToScreen()}
-		        />		      
-
+			    />	    
 			</View>
 		);
 	}

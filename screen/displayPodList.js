@@ -55,7 +55,8 @@ class FlatListItem extends Component {
               title: this.props.item.title,
               img_url: this.props.item.img_url,                  
               podcast_url: this.props.item.podcast_url,
-              description: this.props.item.description
+              description: this.props.item.description,
+              itunes_url: this.props.item.itunes_url,
             },
             options: {
               topBar: {
@@ -152,6 +153,8 @@ class WelcomeScreen extends Component{
                 var description = JSON.stringify(posts[x].acf.blurb);
                 var short_title = JSON.stringify(posts[x].title.rendered);
                 var img_url = img_url_raw.match(/\"(\S*)\"/)[1];
+                var itunes = temp.match(/itunes(\S*)\"/)[1];
+                var itunes_url = "https://itunes"+itunes;
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
@@ -165,6 +168,7 @@ class WelcomeScreen extends Component{
                     "description": description,
                     "podcast_url": podcast_url,
                     "short_title": short_title,
+                    "itunes_url": itunes_url,
                 });
             }
         }
