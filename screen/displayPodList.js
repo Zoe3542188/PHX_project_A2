@@ -44,28 +44,54 @@ class FlatListItem extends Component {
     }
   }
 
+
   handlePress () {
-    Navigation.setRoot({
-      root: {
-        stack: {
-          id: 'App',
-          children: [
-            {
-              component: {
-                name: 'audioStack',
-                passProps: {
-                  title: this.props.item.title,
-                  img_url: this.props.item.img_url,                  
-                  podcast_url: this.props.item.podcast_url,
-                  description: this.props.item.description
-                },
+    Navigation.showModal({
+      stack: {
+        children: [{
+          component: {
+            name: 'audioStack',
+            passProps: {
+              title: this.props.item.title,
+              img_url: this.props.item.img_url,                  
+              podcast_url: this.props.item.podcast_url,
+              description: this.props.item.description
+            },
+            options: {
+              topBar: {
+                title: {
+                  text: 'Modal'
+                }
               }
             }
-        ],
-        }
+          }
+        }]
       }
-    })
+    });
   }
+
+  // handlePress () {
+  //   Navigation.setRoot({
+  //     root: {
+  //       stack: {
+  //         id: 'App',
+  //         children: [
+  //           {
+  //             component: {
+  //               name: 'audioStack',
+  //               passProps: {
+  //                 title: this.props.item.title,
+  //                 img_url: this.props.item.img_url,                  
+  //                 podcast_url: this.props.item.podcast_url,
+  //                 description: this.props.item.description
+  //               },
+  //             }
+  //           }
+  //       ],
+  //       }
+  //     }
+  //   })
+  // }
 
   // stream() {
   //   new Player(this.props.item.podcast_url).play();

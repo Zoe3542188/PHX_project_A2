@@ -5,9 +5,11 @@ export const startTabs = () => Navigation.setRoot({
     root: {
         bottomTabs: {
           id: 'BottomTabsId',
-          children: [
-            {
+          children: [{
+            stack: {
+              children: [{
               component: {
+                id: 'MainID',
                 name: 'Main',
                 options: {
                   bottomTab: {
@@ -17,9 +19,12 @@ export const startTabs = () => Navigation.setRoot({
                   }
                 }
               },
-            },
+              }]
+            }
+          },
             {
               component: {
+                id: 'WebinarsID',                
                 name: 'Webinars',
                 options: {
                   bottomTab: {
@@ -32,6 +37,7 @@ export const startTabs = () => Navigation.setRoot({
             },                        
             {
               component: {
+                id: 'PodcastID',                
                 name: 'displayPodList',
                 options: {
                   bottomTab: {
@@ -44,6 +50,7 @@ export const startTabs = () => Navigation.setRoot({
             },
            {
               component: {
+                id: 'EventsID',
                 name: 'Events',
                 options: {
                   bottomTab: {
@@ -56,6 +63,7 @@ export const startTabs = () => Navigation.setRoot({
             },             
             {
               component: {
+                id: 'FeedbackID',
                 name: 'Feedback',
                 options: {
                   bottomTab: {

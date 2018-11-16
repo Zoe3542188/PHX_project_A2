@@ -35,10 +35,16 @@ class perspStack extends Component{
 	render(){
 		return(
 			<View style={styles.container}>
-				<Text>Stuff: {this.props.text}</Text>
-				<Text>Other stuff: {this.props.img_url}</Text>
-
-				<Image source ={{uri:this.props.img_url}}/>
+				<Text style={styles.flatListTitleWeb}>
+					{this.props.title}
+				</Text>
+	      		<Image
+	      	  		source={{uri:this.props.img_url}}
+	      	  		style={{width:300, height:300, margin:5}}
+	      		/>
+				<Text style = {{margin: 30}}>
+					{this.props.description}
+				</Text>	 
 
 		        <Button
 		          onPress={()=> this.goToScreen('Main')}

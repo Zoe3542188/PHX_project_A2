@@ -25,25 +25,45 @@ export class FlatListItem extends Component {
   }
 
   handlePress () {
-    Navigation.setRoot({
-      root: {
-        stack: {
-          id: 'App',
-          children: [
-            {
-              component: {
-                name: 'perspStack',
-                passProps: {
-                  text: this.props.item.title,
-                  img_url: this.props.item.img_url
-                },
-              }
+    Navigation.push(this.props.componentId, {
+      component: {
+        name: 'perspStack',
+        passProps: {
+          text: 'Pushed screen'
+        },
+        options: {
+          topBar: {
+            title: {
+              text: 'Pushed screen title'
             }
-        ],
+          }
         }
       }
-    })
+    });
   }
+
+  // handlePress () {
+  //   Navigation.setRoot({
+  //     root: {
+  //       stack: {
+  //         id: 'BottomTabsId',
+  //         children: [
+  //           {
+  //             component: {
+  //               name: 'perspStack',
+  //               passProps: {
+  //                 title: this.props.item.title,
+  //                 img_url: this.props.item.img_url,
+  //                 description: this.props.item.description                  
+  //               },
+  //             }
+  //           }
+  //       ],
+  //       }
+  //     }
+  //   })
+  // }
+
 
   onP = () => {
     startStacks();

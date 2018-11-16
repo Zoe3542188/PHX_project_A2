@@ -25,12 +25,8 @@ class audioStack extends Component{
 	      }
 	    };
 	  }
-	goToScreen = (screenName) =>{
-		Navigation.push(this.props.componentId,{
-			component:{
-				name: screenName
-			}
-		})
+	goToScreen = () =>{
+		Navigation.dismissModal(this.props.componentId);
 	}
 
   stream() {
@@ -64,14 +60,8 @@ class audioStack extends Component{
 		          style = {{width: 300, height: 80}}		      	  		      	  
 		      	  backgroundColor="#3897f1"
 		          title="Download podcast"
-		        />		        
-		        <Button
-		          onPress={startTabs}
-		          backgroundColor="white"
-		          color="black"
-		          title="Home"
-		        />	
-
+		          onPress={()=> this.goToScreen()}
+		        />		      
 
 			</View>
 		);
