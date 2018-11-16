@@ -47,6 +47,10 @@ class audioStream extends Component{
 	  // }, 3000);
 	}
 
+	_onPress2(){
+		startTabs();
+	}
+
 	render(){
 		return(
 			<View style={styles.container}>

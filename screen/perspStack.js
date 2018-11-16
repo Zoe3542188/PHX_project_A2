@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {View,
+		Image,
 		Text,
 		StyleSheet,
 		Button
@@ -34,6 +35,11 @@ class perspStack extends Component{
 	render(){
 		return(
 			<View style={styles.container}>
+				<Text>Stuff: {this.props.text}</Text>
+				<Text>Other stuff: {this.props.img_url}</Text>
+
+				<Image source ={{uri:this.props.img_url}}/>
+
 		        <Button
 		          onPress={()=> this.goToScreen('Main')}
 		          title="Go back"

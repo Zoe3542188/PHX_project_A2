@@ -15,8 +15,41 @@ import {startStacks} from './startMainTab'
 
 console.disableYellowBox = true;
 
-class FlatListItem extends Component {
-  render() {          
+export class FlatListItem extends Component {
+
+  constructor() {
+    super();
+    this.state = {
+
+    }
+  }
+
+  handlePress () {
+    Navigation.setRoot({
+      root: {
+        stack: {
+          id: 'App',
+          children: [
+            {
+              component: {
+                name: 'perspStack',
+                passProps: {
+                  text: this.props.item.title,
+                  img_url: this.props.item.img_url
+                },
+              }
+            }
+        ],
+        }
+      }
+    })
+  }
+
+  onP = () => {
+    startStacks();
+  }
+
+  render() {    
     return (
     	<Card style={{height:20, width:50}}
         title={this.props.item.title}
@@ -25,17 +58,16 @@ class FlatListItem extends Component {
         <Text style={{marginBottom: 10}}>
         {this.props.item.description}
         </Text>
-        <Button onPress={startStacks}
+        <Button onPress={()=>this.handlePress()}
             icon={<Icon name='code' color='#ffffff' />}
             backgroundColor='#3D6DCC'
             buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
             title='See more' 
-        />
+        />        
         </Card>
     );
   }
 }
-
 
 
 class WelcomeScreen extends Component{
@@ -94,6 +126,7 @@ class WelcomeScreen extends Component{
 
 
 	render(){
+
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
             <FlatList 
@@ -104,7 +137,6 @@ class WelcomeScreen extends Component{
                     </FlatListItem>);
                 }}
                 >
-
             </FlatList>
         	</View>
 		);

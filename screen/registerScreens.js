@@ -17,6 +17,7 @@ export function registerScreens() {
 	Navigation.registerComponent('displayPodList', () => require('./displayPodList').default);
 	Navigation.registerComponent('Events', () => require('./Events').default);
 	Navigation.registerComponent('Intro', () => require('./Intro').default);
+	//Navigation.registerComponent('testAudio', () => require('./testAudio').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -35,3 +36,4 @@ import AppContainer from "./AppContainer.js";
 import displayPodList from "./displayPodList.js";
 import Events from "./Events.js";
 import Intro from "./Intro.js";
+//import testAudio from "./testAudio.js";

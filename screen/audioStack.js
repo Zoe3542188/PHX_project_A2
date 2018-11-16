@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import {View,
+		Image,
 		Text,
-		StyleSheet,
-		Button
+		StyleSheet
 		} from "react-native";
 import styles from "./style";
 import {
@@ -10,7 +10,8 @@ import {
     Recorder,
     MediaStates
 } from 'react-native-audio-toolkit';  
-import {startStacks, startTabs} from './startMainTab'
+import {Button} from 'react-native-elements';
+import {startStacks, startTabs} from './startMainTab';
 import {Navigation} from 'react-native-navigation';
 import {FlatListItem} from './displayPodList';
 
@@ -19,7 +20,7 @@ class audioStack extends Component{
 	    return {
 	      topBar: {
 	        title: {
-	          text: 'Podcast'
+	          text: 'Podcast Player'
 	        },
 	      }
 	    };
@@ -32,25 +33,46 @@ class audioStack extends Component{
 		})
 	}
 
-	streamAudio() {
-    	new Player(podcast.item.podcast_url).play();
-  	}
+  stream() {
+    new Player(this.props.podcast_url).play();
+  }
 
 	render(){
 		return(
 			<View style={styles.container}>
+				<Text style={styles.flatListTitleWeb}>
+					{this.props.title}
+				</Text>
+	      		<Image
+	      	  		source={{uri:this.props.img_url}}
+	      	  		style={{width:300, height:300, margin:5}}
+	      		/>
+				<Text style = {{margin: 30}}>
+					{this.props.description}
+				</Text>	      		
 		        <Button
-		          onPress={()=> this.streamAudio()}
-		          title="Stream podcast"
+		      	  large
+		      	  icon={{name: 'podcast', type: 'font-awesome'}}
+		          style = {{width: 300, height: 80}}		      	  		      	  
+		      	  backgroundColor="#3897f1"
+		          onPress={()=> this.stream()}
+		          title="Play podcast"
 		        />
 		        <Button
-		          onPress={()=> this.goToScreen('displayPodList')}
-		          title="Go back"
-		        />
+		      	  large
+		      	  icon={{name: 'download', type: 'font-awesome'}}
+		          style = {{width: 300, height: 80}}		      	  		      	  
+		      	  backgroundColor="#3897f1"
+		          title="Download podcast"
+		        />		        
 		        <Button
 		          onPress={startTabs}
+		          backgroundColor="white"
+		          color="black"
 		          title="Home"
-		        />			        			
+		        />	
+
+
 			</View>
 		);
 	}

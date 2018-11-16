@@ -11,6 +11,26 @@ const { StyleSheet } = React;
  	  bottom: 0,
  	  right: 0,
  	},	
+	  button: {
+	    padding: 20,
+	    fontSize: 20,
+	    backgroundColor: 'white',
+	  },
+	  slider: {
+	    height: 10,
+	    margin: 10,
+	  },
+	  buttonContainer: {
+	    flex: 1,
+	    flexDirection: 'row',
+	    justifyContent: 'space-between',
+	    alignItems: 'center',
+	  },
+	  settingsContainer: {
+	    flex: 1,
+	    justifyContent: 'space-between',
+	    alignItems: 'center',
+	  },
  	container:{
  		flex:1,
  		alignItems:'center',

@@ -1,13 +1,10 @@
 import { Navigation } from "react-native-navigation";
 import { AppRegistry } from 'react-native'
 import {registerScreens} from './screen/registerScreens';
+import AppContainer from './screen/AppContainer';
 
 // register screens
 registerScreens();
-
-// import {name as appName} from './app.json';
-// import Intro from './screen/Intro.js';
-// AppRegistry.registerComponent(appName,()=>Intro);
 
 // launch navigation root
 Navigation.events().registerAppLaunchedListener(() => {
@@ -26,3 +23,18 @@ Navigation.events().registerAppLaunchedListener(() => {
     }
   })
 })
+
+
+// import React from 'react';
+// import {AppRegistry} from 'react-native';
+// import AppContainer from './screen/AppContainer';
+
+// class phx extends React.Component {
+//   render() {
+//     return (
+//       <AppContainer />
+//     );
+//   }
+// }
+
+// AppRegistry.registerComponent('phx', () => phx);

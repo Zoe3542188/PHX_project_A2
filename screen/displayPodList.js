@@ -37,13 +37,43 @@ export const startAudioStack = () => Navigation.setRoot({
 
 class FlatListItem extends Component {
 
-  stream() {
-    new Player(this.props.item.podcast_url).play();
+  constructor() {
+    super();
+    this.state = {
+
+    }
   }
+
+  handlePress () {
+    Navigation.setRoot({
+      root: {
+        stack: {
+          id: 'App',
+          children: [
+            {
+              component: {
+                name: 'audioStack',
+                passProps: {
+                  title: this.props.item.title,
+                  img_url: this.props.item.img_url,                  
+                  podcast_url: this.props.item.podcast_url,
+                  description: this.props.item.description
+                },
+              }
+            }
+        ],
+        }
+      }
+    })
+  }
+
+  // stream() {
+  //   new Player(this.props.item.podcast_url).play();
+  // }
 
   render() {          
     return (
-      <TouchableOpacity onPress={()=>this.stream()} style={{
+      <TouchableOpacity onPress={()=>this.handlePress()} style={{
         flex: 1,
         flexDirection:'column',
         backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'}}>

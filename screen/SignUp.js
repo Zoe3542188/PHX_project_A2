@@ -6,6 +6,7 @@ import { Button, CheckBox } from 'react-native-elements';
 import { FormLabel, FormInput, FormValidationMessage } from 'react-native-elements'
 
 import {startTabs} from './startMainTab';
+import {Navigation} from 'react-native-navigation';
 
 export default class SignUp extends Component {
   constructor() {
@@ -14,6 +15,25 @@ export default class SignUp extends Component {
 
     }
   }
+
+  handlePress () {
+      Navigation.push(this.props.componentId, {
+      component: {
+        name: 'perspStack',
+        passProps: {
+          text: 'Pushed screen'
+        },
+        options: {
+          topBar: {
+            title: {
+              text: 'Pushed screen title'
+            }
+          }
+        }
+      }
+    });
+  }
+
   render() {
     return (
       <KeyboardAvoidingView style={styles.containerView} behavior="padding">
