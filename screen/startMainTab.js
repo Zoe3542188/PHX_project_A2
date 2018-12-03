@@ -7,19 +7,26 @@ export const startTabs = () => Navigation.setRoot({
           id: 'BottomTabsId',
           children: [{
             stack: {
-              children: [{
-              component: {
-                id: 'MainID',
-                name: 'Main',
-                options: {
-                  bottomTab: {
-                    fontSize: 12,
-                    text: 'Main',
-                    icon: require('../assets/img/home.png')
-                  }
-                }
+              children: [
+              {
+                component: {
+                  id: 'PerspID',
+                  name: 'perspStack',
+                },
               },
-              }]
+              {
+                component: {
+                  id: 'MainID',
+                  name: 'Main',
+                },               
+              }],
+              options: {
+                bottomTab: {
+                  fontSize: 12,
+                  text: 'Main',
+                  icon: require('../assets/img/home.png')
+                }
+              }              
             }
           },
             {
@@ -50,13 +57,13 @@ export const startTabs = () => Navigation.setRoot({
             },
            {
               component: {
-                id: 'EventsID',
-                name: 'Events',
+                id: 'DownloadsID',
+                name: 'Downloads',
                 options: {
                   bottomTab: {
                     fontSize: 12,
-                    text: "Events",
-                    icon: require('../assets/img/calendar.png')
+                    text: "Downloads",
+                    icon: require('../assets/img/download.png')
                   }
                 }
               },

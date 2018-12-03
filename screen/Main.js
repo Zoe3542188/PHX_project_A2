@@ -23,51 +23,56 @@ export class FlatListItem extends Component {
 
     }
   }
-/*
-  handlePress () {
-    Navigation.push(this.props.componentId, {
-      component: {
-        name: 'perspStack',
-        passProps: {
-          text: 'Pushed screen'
-        },
-        options: {
-          topBar: {
-            title: {
-              text: 'Pushed screen title'
-            }
-          }
-        }
-      }
-    });
-  }
-*/
-  handlePress () {
-    Navigation.setRoot({
-      root: {
-        stack: {
-          id: 'BottomTabsId',
-          children: [
-            {
-              component: {
-                name: 'perspStack',
-                passProps: {
-                  title: this.props.item.title,
-                  img_url: this.props.item.img_url,
-                  description: this.props.item.description                  
-                },
-              }
-            }
-        ],
-        }
+
+  goToScreen = (screenName) =>{
+    Navigation.push(this.props.componentId,{
+      component:{
+        name: screenName
       }
     })
   }
+  // handlePress () {
+  //   Navigation.push(this.props.componentId, {
+  //     component: {
+  //       name: 'perspStack',
+  //       passProps: {
+  //         text: 'Pushed screen'
+  //       },
+  //       options: {
+  //         topBar: {
+  //           title: {
+  //             text: 'Pushed screen title'
+  //           }
+  //         }
+  //       }
+  //     }
+  //   });
+  // }
 
-
-  onP = () => {
-    startStacks();
+  handlePress () {
+    Navigation.showModal({
+      stack: {
+        children: [{
+          component: {
+            name: 'perspStack',
+            passProps: {
+              title: this.props.item.title,
+              img_url: this.props.item.img_url,                  
+              description: this.props.item.description,
+            },
+            options: {
+              topBar: {
+                title: {
+                  text: 'Perspectives'
+                }
+              }
+            }
+          }
+        }]
+      }
+    });
   }
+
 
   render() {    
     return (

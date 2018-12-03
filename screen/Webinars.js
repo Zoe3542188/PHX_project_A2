@@ -66,7 +66,6 @@ class WelcomeScreen extends Component{
             var type = JSON.stringify(posts[x].acf.feature_number);
             if(flag == "false" && type == "988"){
                 var temp = JSON.stringify(posts[x].content.rendered);
-                var podcast_url = temp.match(/src=\\\"(\S*)\?/)[1];
                 var name = JSON.stringify(posts[x].acf.post_header);
                 var date = JSON.stringify(posts[x].date);
                 var author = JSON.stringify(posts[x].author);
@@ -85,7 +84,6 @@ class WelcomeScreen extends Component{
                     "author": author,
                     "img_url": img_url,
                     "description": description,
-                    "podcast_url": podcast_url,
                     "short_title": short_title,
                 });
             }
@@ -93,8 +91,6 @@ class WelcomeScreen extends Component{
         this.setState({data:all_podcast});
         //alert(JSON.stringify(all_podcast[].description))
     };
-				//<Button title="Click me" onPress={()=>this.goToScreen('Clickme')} />
-				//<Button title="Don't click me" onPress={()=>alert("I said don't!")}/>
     componentDidMount(){
         //fetch data right after page load
         this.fetchData();

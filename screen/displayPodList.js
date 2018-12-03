@@ -56,12 +56,13 @@ class FlatListItem extends Component {
               img_url: this.props.item.img_url,                  
               podcast_url: this.props.item.podcast_url,
               description: this.props.item.description,
-              itunes_url: this.props.item.itunes_url,
+              itunes_url: this.props.item.itunes_url, 
+              file_name: this.props.item.file_name,             
             },
             options: {
               topBar: {
                 title: {
-                  text: 'Modal'
+                  text: 'Podcasts'
                 }
               }
             }
@@ -128,7 +129,7 @@ class FlatListItem extends Component {
 
 
 class WelcomeScreen extends Component{
-	state={
+  state={
         data:[]
     };
 
@@ -160,6 +161,8 @@ class WelcomeScreen extends Component{
                 short_title = short_title.replace(/^\"|\"$/g,'');
                 short_title = short_title.replace('FA ','');
                 description = description.replace(/^\"|\"$/g,'');
+                var file_name = short_title.replace(' ','_');
+
                 all_podcast.push({
                     "title": name,
                     "date": date,
@@ -169,14 +172,14 @@ class WelcomeScreen extends Component{
                     "podcast_url": podcast_url,
                     "short_title": short_title,
                     "itunes_url": itunes_url,
+                    "file_name": file_name,                    
                 });
             }
         }
         this.setState({data:all_podcast});
         //alert(JSON.stringify(all_podcast[].description))
     };
-				//<Button title="Click me" onPress={()=>this.goToScreen('Clickme')} />
-				//<Button title="Don't click me" onPress={()=>alert("I said don't!")}/>
+
     componentDidMount(){
         //fetch data right after page load
         this.fetchData();

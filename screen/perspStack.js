@@ -24,13 +24,17 @@ class perspStack extends Component{
 	      }
 	    };
 	  }
-	goToScreen = (screenName) =>{
-		Navigation.push(this.props.componentId,{
-			component:{
-				name: screenName
-			}
-		})
-	}
+	// goToScreen = (screenName) =>{
+	// 	Navigation.push(this.props.componentId,{
+	// 		component:{
+	// 			name: screenName
+	// 		}
+	// 	})
+	// }
+
+  goToScreen = () =>{
+		Navigation.dismissModal(this.props.componentId);
+  }
 
 	render(){
 		return(
@@ -47,13 +51,9 @@ class perspStack extends Component{
 				</Text>	 
 
 		        <Button
-		          onPress={()=> this.goToScreen('Main')}
+		          onPress={()=> this.goToScreen()}
 		          title="Go back"
-		        />
-		        <Button
-		          onPress={startTabs}
-		          title="Home"
-		        />			        			
+		        />	        			
 			</View>
 		);
 	}

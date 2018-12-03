@@ -12,6 +12,7 @@ import {
     MediaStates
 } from 'react-native-audio-toolkit';  
 import {Button} from 'react-native-elements';
+import RNFetchBlob from 'rn-fetch-blob';
 import {startStacks, startTabs} from './startMainTab';
 import {Navigation} from 'react-native-navigation';
 import {FlatListItem} from './displayPodList';
@@ -26,7 +27,8 @@ class audioStack extends Component{
 	      }
 	    };
 	  }
-	goToScreen = () =>{
+	  
+  goToScreen = () =>{
 		Navigation.dismissModal(this.props.componentId);
 	}
 
@@ -35,7 +37,28 @@ class audioStack extends Component{
   }
 
   download() {
-  	Linking.openURL(this.props.itunes_url);
+  	//Linking.openURL(this.props.itunes_url);
+  	const dirs = RNFetchBlob.fs.dirs
+		RNFetchBlob.config({
+		    // add this option that makes response data to be stored as a file,
+		    // this is much more performant.
+		    fileCache : true,
+		    appendExt : 'mp3',
+//			  path : dirs.DocumentDir + '/podcasts/podcast.mp3'
+			  path : dirs.DocumentDir + '/podcasts/' + this.props.file_name + '.mp3'			  
+		  })
+		  .fetch('GET', this.props.podcast_url, {
+		    //some headers ..
+		  })
+		   // listen to download progress event
+	    .progress((received, total) => {
+	        console.log('progress', received / total)
+	    })
+		  .then((res) => {
+		    // the temp file path
+		    console.log('The file saved to ', res.path())
+		    alert(res.path())
+		  })  	
   }
 
 	render(){
@@ -75,9 +98,9 @@ class audioStack extends Component{
 		      	  large
 		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
 		          buttonStyle = {{width: 180, height: 60}}	
-		          textStyle={{fontSize: 13, color:'black'}}	      	  		      	  
+		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
 		      	  backgroundColor="white"
-		          title="Back to main"
+		          title="Back"
 		          onPress={()=> this.goToScreen()}
 			    />	    
 			</View>
