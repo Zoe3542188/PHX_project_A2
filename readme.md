@@ -26,6 +26,7 @@ PHX_project_A2
 6. react native audio toolkit [react-native-audio-toolkit](https://github.com/futurice/react-native-audio-toolkit)
 7. react native button [react-native-button](https://github.com/ide/react-native-button)
 8. react native app intro slider [react-native-app-intro-slider](https://github.com/Jacse/react-native-app-intro-slider)
+9. react native file system [react-native-fs](https://github.com/itinance/react-native-fs)
 
 #### Useful link: general information about installing [libraries with native dependencies](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
 
