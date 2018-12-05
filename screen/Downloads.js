@@ -52,7 +52,7 @@ class FlatListItem extends Component {
 					      	  icon={{name: 'podcast', type: 'font-awesome', size:12}}
 					          buttonStyle = {{width: 80, height: 55, margin:10, borderRadius:6,marginLeft:5,marginTop:5}}	
 					          textStyle={{fontSize: 13 }}	      	  		      	  
-					      	  backgroundColor="#3897f1"
+					      	  backgroundColor="#2ec1dc"
 					          onPress={()=> this.playFile()}
 					          title="Play"
 					        />
@@ -61,7 +61,7 @@ class FlatListItem extends Component {
 					      	  icon={{name: 'trash', type: 'font-awesome', size:12}}
 					          buttonStyle = {{width: 80, height: 55, margin:10, borderRadius:6,marginLeft:5,marginTop:5}}	
 					          textStyle={{fontSize: 13 }}	      	  		      	  
-					      	  backgroundColor="#3897f1"
+					      	  backgroundColor="#2ec1dc"
 					          onPress={()=> this.deleteFile()}
 					          title="Delete"
 					        />					        

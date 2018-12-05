@@ -85,7 +85,7 @@ class audioStack extends Component{
 			      	  icon={{name: 'podcast', type: 'font-awesome', size:12}}
 			          buttonStyle = {{width: 160, height: 60, margin:5, borderRadius:6,marginLeft:5}}	
 			          textStyle={{fontSize: 13 }}	      	  		      	  
-			      	  backgroundColor="#3897f1"
+			      	  backgroundColor="#2ec1dc"
 			          onPress={()=> this.stream()}
 			          title="Play podcast"
 			        />
@@ -94,7 +94,7 @@ class audioStack extends Component{
 			      	  icon={{name: 'download', type: 'font-awesome', size:12}}
 			          buttonStyle = {{width: 160, height: 60,margin:5, borderRadius:6, marginLeft:-25}}	
 			          textStyle={{fontSize: 13, fontWeight:'bold'}}	      	  
-			      	  backgroundColor="#3897f1"
+			      	  backgroundColor="#2ec1dc"
 			          onPress={()=> this.download()}
 			          title="Download podcast"
 			        />
@@ -103,7 +103,7 @@ class audioStack extends Component{
 			      	  icon={{name: 'fa-itunes', type: 'font-awesome', size:12}}
 			          buttonStyle = {{width: 160, height: 60,margin:5, borderRadius:6, marginLeft:-25}}	
 			          textStyle={{fontSize: 13 }}	      	  
-			      	  backgroundColor="#3897f1"
+			      	  backgroundColor="#2ec1dc"
 			          onPress={()=> this.itunes()}
 			          title="open in itunes"
 			        />

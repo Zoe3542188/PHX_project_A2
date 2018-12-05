@@ -33,11 +33,20 @@ class videoStack extends Component{
 			      	  		contentInset={{top:5,bottom:340}}
 			      	  		scrollEnable = {false}
 			      		/>;
-		const Upcomming = <Text style={styles.upComingDescription}>The Event is not avaliable here. Please view below for additional infomation:)</Text>;
+		const Upcoming =<View style={styles.upComingDescription}>
+						<Text> 
+							COMING SOON! This event has not started yet. Please check back at later date or see the website for more information.
+						</Text>					
+			      		<Image
+			      	  		source={{uri:this.props.video_url.replace("\\","")}}
+			      	  		style={{width:340,height:220,marginTop:5}}
+			      		/>
+			      		</View>
+							
 		let message;
 		var flag = this.props.video_url.includes("jpg");
 		if(flag){
-			message = Upcomming;
+			message = Upcoming;
 		}
 		else{
 			message = Webview;
@@ -68,9 +77,10 @@ class videoStack extends Component{
 					              <Text style={styles.webinarDate}>{this.props.author_name}</Text>
 					              <Text style={styles.webinarAuthorName}>{this.props.date}</Text>
 					              <Button
+					              	  icon={{name: 'safari', type: 'font-awesome', size:15, color:'white'}}
 							          buttonStyle = {{width: 150, height: 40, borderRadius:10,top:35,left:10}}	
-							          textStyle={{fontSize: 12, color:'black'}}	      	  		      	  
-							      	  backgroundColor="#B1E3F3"
+							          textStyle={{fontSize: 12, color:'white'}}	      	  		      	  
+							      	  backgroundColor="#2ec1dc"
 							          title="View in Website"
 							          onPress={()=> {Linking.openURL(this.props.video_url)}}
 							    />

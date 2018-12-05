@@ -104,7 +104,7 @@ class FlatListItem extends Component {
       <TouchableOpacity onPress={()=>this.handlePress()} style={{
         flex: 1,
         flexDirection:'column',
-        backgroundColor: this.props.index % 2 == 0 ? 'white': '#88daf7'}}>
+        backgroundColor: this.props.index % 2 == 0 ? 'white': '#2ec1dc'}}>
       	<View style={{
       	  	flex:1,
       	  	flexDirection:'row'}}> 

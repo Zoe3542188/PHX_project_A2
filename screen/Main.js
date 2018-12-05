@@ -85,8 +85,8 @@ export class FlatListItem extends Component {
         </Text>
         <Button onPress={()=>this.handlePress()}
             icon={<Icon name='code' color='#ffffff' />}
-            backgroundColor='#3D6DCC'
-            buttonStyle={{borderRadius: 0, marginLeft: 0, marginRight: 0, marginBottom: 0}}
+            backgroundColor='#2ec1dc'
+            buttonStyle={{borderRadius: 10, marginLeft: 0, marginRight: 0, marginBottom: 0}}
             title='See more' 
         />        
         </Card>

@@ -12,7 +12,7 @@ import {View,
 import styles from "./style";
 import { Navigation } from "react-native-navigation";
 
-//console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 export const startVideoStack = () => Navigation.setRoot({
   root: {
@@ -146,7 +146,7 @@ class WelcomeScreen extends Component{
                 excerpt = excerpt.replace('[&hellip;]\\n','')
                 author_description = author_description.replace(/^\"|\"$/g,'');
                 date = date.replace(/^\"|\"$/g,'');
-                date = date.replace('T','');
+                date = date.replace('T',' ');
                 all_Webinars.push({
                     "title": name,
                     "date": date,
