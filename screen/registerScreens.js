@@ -9,6 +9,7 @@ export function registerScreens() {
 	Navigation.registerComponent('Feedback', () => require('./Feedback').default);
 	Navigation.registerComponent('Main', () => require('./Main').default);
 	Navigation.registerComponent('SignUp', () => require('./SignUp').default);
+	Navigation.registerComponent('SignUp2', () => require('./SignUp2').default);
 	Navigation.registerComponent('VideoComponent', () => require('./VideoComponent').default);
 	Navigation.registerComponent('audioStream', () => require('./audioStream').default);
 	Navigation.registerComponent('audioStack', () => require('./audioStack').default);
@@ -29,6 +30,7 @@ import Courses from "./Courses.js";
 import Feedback from "./Feedback.js";
 import Main from "./Main.js";
 import SignUp from "./SignUp.js";
+import SignUp2 from "./SignUp2.js";
 import VideoComponent from "./VideoComponent.js";
 import audioStream from "./audioStream.js";
 import audioStack from "./audioStack.js";

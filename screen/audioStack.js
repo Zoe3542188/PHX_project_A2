@@ -37,7 +37,6 @@ class audioStack extends Component{
   }
 
   download() {
-  	//Linking.openURL(this.props.itunes_url);
   	const dirs = RNFetchBlob.fs.dirs
 		RNFetchBlob.config({
 		    // add this option that makes response data to be stored as a file,
@@ -60,6 +59,12 @@ class audioStack extends Component{
 		    alert(res.path())
 		  })  	
   }
+
+  itunes() {
+  	Linking.openURL(this.props.itunes_url);
+  }
+
+
 
 	render(){
 		return(
@@ -92,6 +97,15 @@ class audioStack extends Component{
 			      	  backgroundColor="#3897f1"
 			          onPress={()=> this.download()}
 			          title="Download podcast"
+			        />
+			        <Button
+			      	  large
+			      	  icon={{name: 'fa-itunes', type: 'font-awesome', size:12}}
+			          buttonStyle = {{width: 160, height: 60,margin:5, borderRadius:6, marginLeft:-25}}	
+			          textStyle={{fontSize: 13 }}	      	  
+			      	  backgroundColor="#3897f1"
+			          onPress={()=> this.itunes()}
+			          title="open in itunes"
 			        />
 			    </View>	  
 			    <Button

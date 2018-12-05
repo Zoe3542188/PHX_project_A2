@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import {View,
 		Text,
 		StyleSheet,
-		Button,
 		FlatList,
 		ScrollView,
 		AsyncStorage,		
@@ -10,6 +9,13 @@ import {View,
 		TouchableOpacity,
 		} from "react-native";
 import styles from "./style";
+
+import {
+    Player,
+    Recorder,
+    MediaStates
+} from 'react-native-audio-toolkit';  
+import {Button} from 'react-native-elements';
 import { Navigation } from "react-native-navigation";
 import RNFS from 'react-native-fs';
 import RNFetchBlob from 'rn-fetch-blob';
@@ -17,6 +23,13 @@ import RNFetchBlob from 'rn-fetch-blob';
 // Downloads Screen
 
 class FlatListItem extends Component {
+	  playFile() {
+    	new Player(this.props.item.path).play();
+  	}
+
+	  deleteFile() {
+  	}
+
     render() {          
         return (
         	<TouchableOpacity style={{
@@ -32,8 +45,27 @@ class FlatListItem extends Component {
 		         		height:100
 		         	}}>
 		              <Text style={styles.flatListTitleWeb}>{this.props.item.name}</Text>
-		              <Text style={styles.flatListItemWeb}>{this.props.item.path}</Text>
-		            </View>
+		          </View>
+		          <View style={{flex:1, flexDirection:'row'}}>   		
+					        <Button
+					      	  large
+					      	  icon={{name: 'podcast', type: 'font-awesome', size:12}}
+					          buttonStyle = {{width: 80, height: 55, margin:10, borderRadius:6,marginLeft:5,marginTop:5}}	
+					          textStyle={{fontSize: 13 }}	      	  		      	  
+					      	  backgroundColor="#3897f1"
+					          onPress={()=> this.playFile()}
+					          title="Play"
+					        />
+					        <Button
+					      	  large
+					      	  icon={{name: 'trash', type: 'font-awesome', size:12}}
+					          buttonStyle = {{width: 80, height: 55, margin:10, borderRadius:6,marginLeft:5,marginTop:5}}	
+					          textStyle={{fontSize: 13 }}	      	  		      	  
+					      	  backgroundColor="#3897f1"
+					          onPress={()=> this.deleteFile()}
+					          title="Delete"
+					        />					        
+		          </View>
 	            </View>
                 <View style={{
                     height:1,
@@ -74,17 +106,6 @@ class Downloads extends Component{
 	        this.setState({data:all_podcasts});
 		    //alert(JSON.stringify(all_podcasts[0].name));	        
 
-		    // stat the first file
-		    return Promise.all([RNFS.stat(result[1].path), result[1].path]);
-		  })
-		  .then((statResult) => {
-		    if (statResult[0].isFile()) {
-		      // if we have a file, read it
-		     // alert(statResult[1]);		    		      
-		      return RNFS.readFile(statResult[1], 'utf8');
-		    }
-
-		    return 'no file';
 		  })
 		  .then((contents) => {
 		    // log the file contents
@@ -95,10 +116,10 @@ class Downloads extends Component{
 		  });
 	}
 
-    componentDidMount(){
-        //fetch data right after page load
-        this.viewFiles();
-    };
+  componentDidMount(){
+      //fetch data right after page load
+      this.viewFiles();
+  };
 
 
 	render(){

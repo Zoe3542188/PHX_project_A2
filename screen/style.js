@@ -136,4 +136,28 @@ const { StyleSheet } = React;
     textAlign: 'center',
     marginTop: 16,
  	}, 	
+  formcontainer: {
+    justifyContent: 'center',
+    marginTop: 50,
+    padding: 20,
+    backgroundColor: '#ffffff',
+  },
+  loginScreenButton:{
+    marginRight:0,
+    marginLeft:0,
+    marginTop:10,
+    paddingTop:10,
+    paddingBottom:10,
+    backgroundColor:'#5CB3FF',
+    borderRadius:10,
+    borderWidth: 1,
+    borderColor: '#fff'
+  },
+  loginText:{
+    color:'#fff',
+    textAlign:'center',
+    paddingLeft : 10,
+    paddingRight : 10
+  }
+
  };
