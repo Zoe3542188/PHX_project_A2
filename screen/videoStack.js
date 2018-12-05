@@ -33,7 +33,7 @@ class videoStack extends Component{
 			      	  		contentInset={{top:5,bottom:340}}
 			      	  		scrollEnable = {false}
 			      		/>;
-		const Upcomming = <Text style={styles.upComingDescription}>The Event is not avaliable here. Please view blew for additional infomation:)</Text>;
+		const Upcomming = <Text style={styles.upComingDescription}>The Event is not avaliable here. Please view below for additional infomation:)</Text>;
 		let message;
 		var flag = this.props.video_url.includes("jpg");
 		if(flag){
