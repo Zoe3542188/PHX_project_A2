@@ -13,7 +13,7 @@ import styles from "./style";
 import { Navigation } from "react-native-navigation";
 import {startStacks} from './startMainTab'
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 export class FlatListItem extends Component {
 

@@ -93,7 +93,7 @@ class audioStack extends Component{
 			      	  large
 			      	  icon={{name: 'download', type: 'font-awesome', size:12}}
 			          buttonStyle = {{width: 160, height: 60,margin:5, borderRadius:6, marginLeft:-25}}	
-			          textStyle={{fontSize: 13 }}	      	  
+			          textStyle={{fontSize: 13, fontWeight:'bold'}}	      	  
 			      	  backgroundColor="#3897f1"
 			          onPress={()=> this.download()}
 			          title="Download podcast"
