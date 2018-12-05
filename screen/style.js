@@ -88,7 +88,7 @@ const { StyleSheet } = React;
 	},
 	flatListTitleWeb: {
 		color: 'black',
-		padding:5,
+		padding:2,
 		fontSize:18,
 		fontWeight:'bold',
 	},	
@@ -136,4 +136,33 @@ const { StyleSheet } = React;
     textAlign: 'center',
     marginTop: 16,
  	}, 	
+ 	webinarAuthorName: {
+        color: '#1f201f',
+        padding: 2,
+        fontSize: 13,  
+        bottom:-35,
+        left:30,
+	},
+	webinarDate: {
+		color: 'black',
+		padding:2,
+		fontSize:18,
+		fontWeight:'bold',
+		bottom:-40,
+		left:30,
+	},
+	authorDescription:{
+        color: 'black',
+        padding: 18,
+        fontSize: 15,  
+        fontStyle:'italic',
+	},	
+	upComingDescription:{
+        color: 'black',
+        padding: 18,
+        fontSize: 15,  
+        fontStyle:'italic',
+        height:500,
+        width:370,
+	},
  };
