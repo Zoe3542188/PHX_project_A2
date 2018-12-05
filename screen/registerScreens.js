@@ -18,6 +18,7 @@ export function registerScreens() {
 	Navigation.registerComponent('Events', () => require('./Events').default);
 	Navigation.registerComponent('Intro', () => require('./Intro').default);
 	Navigation.registerComponent('Downloads', () => require('./Downloads').default);
+	Navigation.registerComponent('videoStack', () => require('./videoStack').default);
 	//Navigation.registerComponent('testAudio', () => require('./testAudio').default);
 }
 
@@ -38,5 +39,6 @@ import displayPodList from "./displayPodList.js";
 import Events from "./Events.js";
 import Intro from "./Intro.js";
 import Downloads from "./Downloads.js";
+import videoStack from "./videoStack.js";
 
 //import testAudio from "./testAudio.js";

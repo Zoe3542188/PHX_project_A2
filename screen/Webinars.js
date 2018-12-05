@@ -12,12 +12,64 @@ import {View,
 import styles from "./style";
 import { Navigation } from "react-native-navigation";
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
+
+export const startVideoStack = () => Navigation.setRoot({
+  root: {
+    stack: {
+      id: 'Video',
+      children: [
+        {
+          component: {
+            name: 'Webinars',
+          }
+        }
+    ],
+    }
+  }
+})
 
 class FlatListItem extends Component {
+    constructor(){
+        super();
+        this.state = {
+
+        }
+    }
+
+    handlePress () {
+        Navigation.showModal({
+          stack: {
+            children: [{
+              component: {
+                name: 'videoStack',
+                passProps: {
+                  title: this.props.item.title,
+                  img_url: this.props.item.img_url,                  
+                  description: this.props.item.description,  
+                  video_url: this.props.item.video_url,  
+                  author_name:this.props.item.author_name,
+                  author_description:this.props.item.author_description,
+                  author_img:this.props.item.author_img,  
+                  date:this.props.item.date, 
+                  excerpt:this.props.item.excerpt,    
+                },
+                options: {
+                  topBar: {
+                    title: {
+                      text: 'Webinars'
+                    }
+                  }
+                }
+              }
+            }]
+          }
+        });
+    }
+
     render() {          
         return (
-        	<TouchableOpacity style={{
+        	<TouchableOpacity onPress={()=>this.handlePress()} style={{
                 flex: 1,
                 flexDirection:'column',
                 backgroundColor: this.props.index % 2 == 0 ? 'white': 'white'}}>
@@ -59,7 +111,7 @@ class WelcomeScreen extends Component{
         //posts
         const posts = await response.json();
         var x;
-        var all_podcast = [];
+        var all_Webinars = [];
         //var Podcast = {};
         for (x in posts){
             var flag = JSON.stringify(posts[x].content.protected);
@@ -73,22 +125,44 @@ class WelcomeScreen extends Component{
                 var description = JSON.stringify(posts[x].acf.blurb);
                 var short_title = JSON.stringify(posts[x].title.rendered);
                 var img_url = img_url_raw.match(/\"(\S*)\"/)[1];
+                var video_url = temp.match(/src=\\\"(\S*)/)[1];
+                var sidebar = posts[x].acf.sidebar;
+                var author_name = JSON.stringify(posts[x].acf.sidebar[0].title)
+                var author_description = JSON.stringify(posts[x].acf.sidebar[0].description)
+                var author_img = JSON.stringify(posts[x].acf.sidebar[0].image.url)
+                var excerpt = JSON.stringify(posts[x].excerpt.rendered)
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
-                short_title = short_title.replace('FA ','');
+                short_title = short_title.replace('Webinar','');
+                short_title = short_title.replace('Web','');
                 description = description.replace(/^\"|\"$/g,'');
-                all_podcast.push({
+                author_name = author_name.replace(/^\"|\"$/g,'');
+                author_img = author_img.replace(/^\"|\"$/g,'');
+                video_url = video_url.replace(/^\"|\"$/g,'');
+                excerpt = excerpt.replace(/^\"|\"$/g,'');
+                excerpt = excerpt.replace('<p>','');
+                excerpt = excerpt.replace('</p>','');
+                excerpt = excerpt.replace('[&hellip;]\\n','')
+                author_description = author_description.replace(/^\"|\"$/g,'');
+                date = date.replace(/^\"|\"$/g,'');
+                date = date.replace('T','');
+                all_Webinars.push({
                     "title": name,
                     "date": date,
                     "author": author,
                     "img_url": img_url,
                     "description": description,
                     "short_title": short_title,
+                    "video_url": video_url,
+                    "author_name": author_name,
+                    "author_description": author_description,
+                    "author_img": author_img,
+                    "excerpt":excerpt,
                 });
             }
         }
-        this.setState({data:all_podcast});
+        this.setState({data:all_Webinars});
         //alert(JSON.stringify(all_podcast[].description))
     };
     componentDidMount(){

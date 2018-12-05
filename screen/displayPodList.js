@@ -18,7 +18,7 @@ import styles from "./style";
 import { Navigation } from "react-native-navigation";
 import { startTabs, startStacks} from './startMainTab';
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 export const startAudioStack = () => Navigation.setRoot({
   root: {
