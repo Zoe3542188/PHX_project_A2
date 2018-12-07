@@ -52,7 +52,8 @@ class FlatListItem extends Component {
                   author_description:this.props.item.author_description,
                   author_img:this.props.item.author_img,  
                   date:this.props.item.date, 
-                  excerpt:this.props.item.excerpt,    
+                  excerpt:this.props.item.excerpt, 
+                  origin_url:this.props.item.origin_url,   
                 },
                 options: {
                   topBar: {
@@ -131,6 +132,7 @@ class WelcomeScreen extends Component{
                 var author_description = JSON.stringify(posts[x].acf.sidebar[0].description)
                 var author_img = JSON.stringify(posts[x].acf.sidebar[0].image.url)
                 var excerpt = JSON.stringify(posts[x].excerpt.rendered)
+                var origin_url = JSON.stringify(posts[x].guid.rendered)
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
@@ -140,6 +142,7 @@ class WelcomeScreen extends Component{
                 author_name = author_name.replace(/^\"|\"$/g,'');
                 author_img = author_img.replace(/^\"|\"$/g,'');
                 video_url = video_url.replace(/^\"|\"$/g,'');
+                origin_url = origin_url.replace(/^\"|\"$/g,'');
                 excerpt = excerpt.replace(/^\"|\"$/g,'');
                 excerpt = excerpt.replace('<p>','');
                 excerpt = excerpt.replace('</p>','');
@@ -147,6 +150,7 @@ class WelcomeScreen extends Component{
                 author_description = author_description.replace(/^\"|\"$/g,'');
                 date = date.replace(/^\"|\"$/g,'');
                 date = date.replace('T',' ');
+                //alert(origin_url)
                 all_Webinars.push({
                     "title": name,
                     "date": date,
@@ -159,6 +163,7 @@ class WelcomeScreen extends Component{
                     "author_description": author_description,
                     "author_img": author_img,
                     "excerpt":excerpt,
+                    "origin_url":origin_url,
                 });
             }
         }

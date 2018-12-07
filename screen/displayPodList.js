@@ -53,6 +53,7 @@ class FlatListItem extends Component {
             name: 'audioStack',
             passProps: {
               title: this.props.item.title,
+              short_title: this.props.item.short_title,
               img_url: this.props.item.img_url,                  
               podcast_url: this.props.item.podcast_url,
               description: this.props.item.description,
@@ -62,7 +63,7 @@ class FlatListItem extends Component {
             options: {
               topBar: {
                 title: {
-                  text: 'Podcasts'
+                  text: "podcast"
                 }
               }
             }
@@ -133,7 +134,7 @@ class WelcomeScreen extends Component{
         data:[]
     };
 
-        fetchData = async () =>{
+    fetchData = async () =>{
         //response
         const response = await fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts?per_page=60');
         //posts

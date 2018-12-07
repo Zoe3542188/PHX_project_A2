@@ -6,11 +6,13 @@ import {View,
 		Linking,
 		WebView,
 		ScrollView,
+		ActionSheetIOS,
 		} from "react-native";
 import styles from "./style";
 import {Button} from 'react-native-elements';
 import {Navigation} from 'react-native-navigation';
-
+import Icon from 'react-native-vector-icons/Feather';
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 class videoStack extends Component{
 	static get options() {
 	    return {
@@ -25,7 +27,19 @@ class videoStack extends Component{
   	goToScreen = () =>{
 		Navigation.dismissModal(this.props.componentId);
 	}
+  browser() {
+  	Linking.openURL(this.props.origin_url);
+  }
 
+  showShareActionSheet () {
+    ActionSheetIOS.showShareActionSheetWithOptions({
+		      url: this.props.video_url,
+		      message: this.props.title,
+		      subject: 'phxWebinar',
+		    },
+		    function(err){alert(err);},
+		    function(e){});
+	}
 	render(){
 		const Webview =  <WebView
 			      	  		source={{uri:this.props.video_url}}
@@ -76,17 +90,13 @@ class videoStack extends Component{
 					         	}}>
 					              <Text style={styles.webinarDate}>{this.props.author_name}</Text>
 					              <Text style={styles.webinarAuthorName}>{this.props.date}</Text>
-					              <Button
-					              	  icon={{name: 'safari', type: 'font-awesome', size:15, color:'white'}}
-							          buttonStyle = {{width: 150, height: 40, borderRadius:10,top:35,left:10}}	
-							          textStyle={{fontSize: 12, color:'white'}}	      	  		      	  
-							      	  backgroundColor="#2ec1dc"
-							          title="View in Website"
-							          onPress={()=> {Linking.openURL(this.props.video_url)}}
-							    />
+					              <View style={{flex: 1,flexDirection:'row'}}>
+								   			  <MIcon style={{left:30,top:35}} name="apple-safari" size={30} color="#383838" onPress={()=>this.browser()}/>
+								   			 	<Icon style={{left:45,top:35}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
+								   			 </View>
 					            </View>
 				            </View>
-				            <View style={{backgroundColor:"#E3EAE7", marginTop:45,marginLeft:20,marginRight:20, borderRadius:10}}>
+				            <View style={{backgroundColor:"#E3EAE7", marginTop:35,marginLeft:20,marginRight:20, borderRadius:10}}>
 				            	<Text style={styles.authorDescription}>{this.props.author_description}</Text>
 				            </View>
 				            <View style={{marginTop:10,marginLeft:20,marginRight:20}}>

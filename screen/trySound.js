@@ -19,9 +19,8 @@ import RNFetchBlob from 'rn-fetch-blob';
 import Icon from 'react-native-vector-icons/Feather';
 import ZIcon from 'react-native-vector-icons/Zocial'
 import {Button} from 'react-native-elements';
-//URL = "https://media.blubrry.com/free_associations/s/dts.podtrac.com/redirect.mp3/populationhealthexchange.org/wp-content/podcasts/fa/Free_Associations_Episode_36.mp3"
-
-class audioStack extends Component{
+URL = "https://media.blubrry.com/free_associations/s/dts.podtrac.com/redirect.mp3/populationhealthexchange.org/wp-content/podcasts/fa/Free_Associations_Episode_36.mp3"
+class trySound extends Component{
 	constructor(){
 		super()
 		this.state={isplaying:false};
@@ -121,26 +120,26 @@ class audioStack extends Component{
 	        	  		style={{width:330, height:180, borderRadius:10,margin:20,marginTop:10}}
 					      />
 				      </View>
-				      <View style={{flex: 1,flexDirection:'row'}}>
-		   			  	<ZIcon style={{left:30,top:-5}} name="itunes" size={30} color="#383838" onPress={()=>this.itunes()}/>
-		   			 	<Icon style={{left:50}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
-		   			 	<Icon style={{left:70}} name="download" size={25} color="#383838" onPress={()=>this.download()}/>
-		   			 </View>
 		   			  <Text style={{marginLeft:12,marginRight:12,fontSize:16,fontStyle:'italic'}}>"{this.props.description}"</Text>
+		   			 <View style={{flex: 1, alignItems: 'flex-end', justifyContent: 'flex-end',flexDirection:'row'}}>
+		   			  <ZIcon style={{right:70,top:27}} name="itunes" size={30} color="#383838" onPress={()=>this.itunes()}/>
+		   			 	<Icon style={{right:50,top:20}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
+		   			 	<Icon style={{right:30,top:20}} name="download" size={25} color="#383838" onPress={()=>this.download()}/>
+		   			 </View>
 		   			</ScrollView>
 	   			</View>
 					<View style={{height: 60}}>
 				    <Button
-			      	  large
-			          buttonStyle = {{left:130,width: 80, height: 60}}	
-			          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
-			      	  backgroundColor="white"
-			          title="Back"
-			          onPress={()=> this.goToScreen()}
+		      	  large
+		          buttonStyle = {{left:130,width: 80, height: 60}}	
+		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
+		      	  backgroundColor="white"
+		          title="Back"
+		          onPress={()=> this.goToScreen()}
 			    	/>  
 					</View>
    			</View>
    		);
   	}
 }
-export default audioStack;
+export default trySound;

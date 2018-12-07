@@ -21,6 +21,7 @@ export function registerScreens() {
 	Navigation.registerComponent('Downloads', () => require('./Downloads').default);
 	Navigation.registerComponent('videoStack', () => require('./videoStack').default);
 	//Navigation.registerComponent('testAudio', () => require('./testAudio').default);
+	Navigation.registerComponent('trySound', () => require('./trySound').default);
 }
 
 import Welcome from "./Welcome.js";
@@ -42,5 +43,6 @@ import Events from "./Events.js";
 import Intro from "./Intro.js";
 import Downloads from "./Downloads.js";
 import videoStack from "./videoStack.js";
+import trySound from "./trySound.js";
 
 //import testAudio from "./testAudio.js";
