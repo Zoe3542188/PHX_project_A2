@@ -73,33 +73,6 @@ class FlatListItem extends Component {
     });
   }
 
-  // handlePress () {
-  //   Navigation.setRoot({
-  //     root: {
-  //       stack: {
-  //         id: 'App',
-  //         children: [
-  //           {
-  //             component: {
-  //               name: 'audioStack',
-  //               passProps: {
-  //                 title: this.props.item.title,
-  //                 img_url: this.props.item.img_url,                  
-  //                 podcast_url: this.props.item.podcast_url,
-  //                 description: this.props.item.description
-  //               },
-  //             }
-  //           }
-  //       ],
-  //       }
-  //     }
-  //   })
-  // }
-
-  // stream() {
-  //   new Player(this.props.item.podcast_url).play();
-  // }
-
   render() {          
     return (
       <TouchableOpacity onPress={()=>this.handlePress()} style={{
@@ -191,6 +164,9 @@ class WelcomeScreen extends Component{
 	render(){
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
+            <View style={styles.headerView}>
+              <Text style={styles.headerFont}>PHX Podcast</Text>
+            </View>
             <FlatList 
                 data={this.state.data}
                 renderItem={({item, index})=>{

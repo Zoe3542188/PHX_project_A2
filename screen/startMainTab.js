@@ -11,15 +11,10 @@ export const startTabs = () => Navigation.setRoot({
               {
                 component: {
                   id: 'PerspID',
-                  name: 'perspStack',
+                  name: 'Main',
                 },
               },
-              {
-                component: {
-                  id: 'MainID',
-                  name: 'Main',
-                },               
-              }],
+           ],
               options: {
                 bottomTab: {
                   fontSize: 12,
@@ -85,18 +80,3 @@ export const startTabs = () => Navigation.setRoot({
         }
       }
   });
-
-export const startStacks = () => Navigation.setRoot({
-  root: {
-    stack: {
-      id: 'App',
-      children: [
-        {
-          component: {
-            name: 'perspStack',
-          }
-        }
-    ],
-    }
-  }
-})

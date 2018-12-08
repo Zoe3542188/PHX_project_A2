@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {
+		Alert,
 		View,
 		Image,
 		Text,
@@ -19,6 +20,7 @@ import RNFetchBlob from 'rn-fetch-blob';
 import Icon from 'react-native-vector-icons/Feather';
 import ZIcon from 'react-native-vector-icons/Zocial'
 import {Button} from 'react-native-elements';
+import {Downloads} from './Downloads.js'
 //URL = "https://media.blubrry.com/free_associations/s/dts.podtrac.com/redirect.mp3/populationhealthexchange.org/wp-content/podcasts/fa/Free_Associations_Episode_36.mp3"
 
 class audioStack extends Component{
@@ -54,6 +56,7 @@ class audioStack extends Component{
   }
 
   download() {
+  		Alert.alert('Download start','Please wait for a while...')
 		const dirs = RNFetchBlob.fs.dirs
 		RNFetchBlob.config({
 		    // add this option that makes response data to be stored as a file,
@@ -74,7 +77,8 @@ class audioStack extends Component{
 		    // the temp file path
 		    console.log('The file saved to ', res.path())
 		    //alert(res.path())
-		    alert('audio downloaded')
+		    Alert.alert('Finished',this.props.file_name+' Downloaded')
+		    Downloads.viewFiles();
 		  })  	
   }
 
@@ -101,7 +105,7 @@ class audioStack extends Component{
   											<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
 							   				<Icon style={{left:190,top:25}} name="play" size={25} color="#383838" onPress={()=>this.stream()}/>	
 											</View>;
-			const pause = <View style={{backgroundColor:'white',flex:1, flexDirection:'row'}}>
+		const pause = <View style={{backgroundColor:'white',flex:1, flexDirection:'row'}}>
 									   	<Text style={{left:120,top:30, fontWeight:'bold',fontSize:15}}>{this.props.short_title}</Text>
 									   	<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
 						   				<Icon style={{left:190,top:25}} name="pause" size={25} color="#383838" onPress={()=>this.pause()}/>
@@ -117,8 +121,8 @@ class audioStack extends Component{
 		   				<Text style={{fontWeight:'bold',fontSize:20,marginTop:10,marginLeft:12,marginRight:10}}>{this.props.title}</Text>
 		   				<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
 			   				<Image
-	        	  		source={{uri:this.props.img_url}}
-	        	  		style={{width:330, height:180, borderRadius:10,margin:20,marginTop:10}}
+			        	  		source={{uri:this.props.img_url}}
+			        	  		style={{width:330, height:180, borderRadius:10,margin:20,marginTop:10}}
 					      />
 				      </View>
 				      <View style={{flex: 1,flexDirection:'row'}}>

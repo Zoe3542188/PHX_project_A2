@@ -11,26 +11,26 @@ const { StyleSheet } = React;
     bottom: 0,
     right: 0,
   },  
-    button: {
-      padding: 20,
-      fontSize: 20,
-      backgroundColor: 'white',
-    },
-    slider: {
-      height: 10,
-      margin: 10,
-    },
-    buttonContainer: {
-      flex: 1,
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
-    settingsContainer: {
-      flex: 1,
-      justifyContent: 'space-between',
-      alignItems: 'center',
-    },
+  button: {
+    padding: 20,
+    fontSize: 20,
+    backgroundColor: 'white',
+  },
+  slider: {
+    height: 10,
+    margin: 10,
+  },
+  buttonContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  settingsContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
   container:{
     flex:1,
     alignItems:'center',
@@ -53,12 +53,12 @@ const { StyleSheet } = React;
     marginBottom: 5,
   },  
   image: {
-      width: 200,
-      height: 200,
+    width: 200,
+    height: 200,
    },   
   flexRow: {
-        flexDirection:'row',
-        height:150,
+    flexDirection:'row',
+    height:150,
     },
   flexColumn:{
     flexDirection:'column',
@@ -66,14 +66,14 @@ const { StyleSheet } = React;
   },
   itemImageDisplay:{
     flex:1,
-        height: 150,
+    height: 150,
     flexDirection:'row',
 
   },
   flatListItem: {
-        color: '#1f201f',
-        padding: 5,
-        fontSize: 16,  
+    color: '#1f201f',
+    padding: 5,
+    fontSize: 16,  
   },
   flatListTitle: {
     color: 'black',
@@ -82,9 +82,9 @@ const { StyleSheet } = React;
     fontWeight:'bold',
   },
   flatListItemWeb: {
-        color: '#1f201f',
-        padding: 2,
-        fontSize: 13,  
+    color: '#1f201f',
+    padding: 2,
+    fontSize: 13,  
   },
   flatListTitleWeb: {
     color: 'black',
@@ -160,11 +160,11 @@ const { StyleSheet } = React;
     paddingRight : 10
   },
   webinarAuthorName: {
-        color: '#1f201f',
-        padding: 2,
-        fontSize: 13,  
-        bottom:-35,
-        left:30,
+    color: '#1f201f',
+    padding: 2,
+    fontSize: 13,  
+    bottom:-35,
+    left:30,
   },
   webinarDate: {
     color: 'black',
@@ -175,17 +175,33 @@ const { StyleSheet } = React;
     left:30,
   },
   authorDescription:{
-        color: 'black',
-        padding: 18,
-        fontSize: 15,  
-        fontStyle:'italic',
+    color: 'black',
+    padding: 18,
+    fontSize: 15,  
+    fontStyle:'italic',
   },  
   upComingDescription:{
-        color: 'black',
-        padding: 18,
-        fontSize: 15,  
-        fontStyle:'italic',
-        height:630,
-        width:370,
+    color: 'black',
+    padding: 18,
+    fontSize: 15,  
+    fontStyle:'italic',
+    height:630,
+    width:370,
+  },
+  headerView:{
+    height:66,
+    borderStyle:'solid',
+    borderWidth:0.2,
+    borderTopColor:'white',
+    borderLeftColor:'white',
+    borderRightColor:'white',
+    borderBottomColor:'#919292',
+    alignItems: 'center', 
+    justifyContent: 'center',
+  },
+  headerFont:{
+    fontWeight:'600',
+    fontSize:18,
+    marginTop:23,
   },
  };

@@ -48,7 +48,6 @@ export class FlatListItem extends Component {
   //     }
   //   });
   // }
-
   handlePress () {
     Navigation.showModal({
       stack: {
@@ -96,6 +95,14 @@ export class FlatListItem extends Component {
 
 
 class WelcomeScreen extends Component{
+  static get options(){
+    return{
+      topBar:{
+        title:{
+          text: 'PHX Perspectives',
+      }},
+    }
+  }
 	state={
         data:[]
     };
@@ -143,6 +150,9 @@ class WelcomeScreen extends Component{
     };
 				//<Button title="Click me" onPress={()=>this.goToScreen('Clickme')} />
 				//<Button title="Don't click me" onPress={()=>alert("I said don't!")}/>
+    componentWillMount(){
+
+    }
     componentDidMount(){
         //fetch data right after page load
         this.fetchData();
@@ -153,7 +163,7 @@ class WelcomeScreen extends Component{
 	render(){
 
 		return(
-			<View style={{flex: 1, marginTop: 22}}>
+			<View style={{flex: 1}}>
             <FlatList 
                 data={this.state.data}
                 renderItem={({item, index})=>{
@@ -163,7 +173,7 @@ class WelcomeScreen extends Component{
                 }}
                 >
             </FlatList>
-        	</View>
+      </View>
 		);
 	}
 }

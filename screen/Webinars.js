@@ -72,8 +72,7 @@ class FlatListItem extends Component {
         return (
         	<TouchableOpacity onPress={()=>this.handlePress()} style={{
                 flex: 1,
-                flexDirection:'column',
-                backgroundColor: this.props.index % 2 == 0 ? 'white': 'white'}}>
+                flexDirection:'column'}}>
 	          	<View style={{
 	          	  	flex:1,
 	          	  	flexDirection:'row'}}> 
@@ -92,8 +91,8 @@ class FlatListItem extends Component {
 	            </View>
                 <View style={{
                     height:1,
-                    backgroundColor:'#5f6b71',
-                }}></View>
+                    backgroundColor:'#5f6b71',}}>
+                </View>
         	</TouchableOpacity>
         );
     }
@@ -180,6 +179,9 @@ class WelcomeScreen extends Component{
 	render(){
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
+            <View style={styles.headerView}>
+              <Text style={styles.headerFont}>PHX Webinars</Text>
+            </View>
             <FlatList 
                 data={this.state.data}
                 renderItem={({item, index})=>{
