@@ -61,10 +61,18 @@ class videoStack extends Component{
 			      	  		style={{width:340,height:220,marginTop:5}}
 			      		/>
 			      		</View>
-							
+	    const webFrame = <WebView
+							originWhitelist={['*']}
+			      	  		source={{html:this.props.video_iframe}}
+			      	  		style={{width:320,height:200, marginTop:30,marginLeft:20}}
+			      	  		scrollEnable = {false}
+			      	  		scalesPageToFit = {false}
+			      		/>;				
 		let message;
 		var flag = this.props.video_url.includes("jpg");
-		if(flag){
+		if(this.props.video_url.includes("facebook"))
+			message = webFrame;
+		else if(flag){
 			message = Upcoming;
 		}
 		else{
@@ -113,7 +121,6 @@ class videoStack extends Component{
 	      		</View>
 			    <Button
 		      	  large
-		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
 		          buttonStyle = {{width: 80, height: 60, bottom:10}}	
 		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
 		      	  backgroundColor="white"

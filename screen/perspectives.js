@@ -31,23 +31,7 @@ export class FlatListItem extends Component {
       }
     })
   }
-  // handlePress () {
-  //   Navigation.push(this.props.componentId, {
-  //     component: {
-  //       name: 'perspStack',
-  //       passProps: {
-  //         text: 'Pushed screen'
-  //       },
-  //       options: {
-  //         topBar: {
-  //           title: {
-  //             text: 'Pushed screen title'
-  //           }
-  //         }
-  //       }
-  //     }
-  //   });
-  // }
+
   handlePress () {
     Navigation.showModal({
       stack: {
@@ -58,6 +42,7 @@ export class FlatListItem extends Component {
               title: this.props.item.title,
               img_url: this.props.item.img_url,                  
               description: this.props.item.description,
+              content:this.props.item.content,
             },
             options: {
               topBar: {
@@ -128,6 +113,10 @@ class WelcomeScreen extends Component{
                 var description = JSON.stringify(posts[x].acf.blurb);
                 var short_title = JSON.stringify(posts[x].title.rendered);
                 var img_url = img_url_raw.match(/\"(\S*)\"/)[1];
+                var content = temp.toString();
+                content = content.replace('"','').replace(/[\\]/g,'');
+                content = content.replace('n\"','');
+                content = content.replace(/n\</g,"\<")
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
@@ -140,7 +129,7 @@ class WelcomeScreen extends Component{
                     "author": author,
                     "img_url": img_url,
                     "description": description,
-                    //"podcast_url": podcast_url,
+                    "content":content,
                     "short_title": short_title,
                 });
             }
@@ -164,9 +153,6 @@ class WelcomeScreen extends Component{
 
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
-                        <View style={styles.headerView}>
-              <Text style={styles.headerFont}>PHX Podcast</Text>
-            </View>
             <FlatList 
                 data={this.state.data}
                 renderItem={({item, index})=>{

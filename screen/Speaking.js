@@ -180,7 +180,10 @@ class WelcomeScreen extends Component{
 	render(){
 
 		return(
-			<View style={{flex: 1}}>
+			<View style={{flex: 1, marginTop:22}}>
+            <View style={styles.headerView}>
+              <Text style={styles.headerFont}>Practically Speaking</Text>
+            </View>
             <FlatList 
                 data={this.state.data}
                 renderItem={({item, index})=>{

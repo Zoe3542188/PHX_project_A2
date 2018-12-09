@@ -10,16 +10,16 @@ export const startTabs = () => Navigation.setRoot({
               children: [
               {
                 component: {
-                  id: 'SpeakingID',
-                  name: 'Speaking',
+                  id: 'PerspID',
+                  name: 'perspectives',
                 },
               },
            ],
               options: {
                 bottomTab: {
                   fontSize: 12,
-                  text: 'Speakings',
-                  icon: require('../assets/img/home.png')
+                  text: 'Perspectives',
+                  icon: require('../assets/img/persp.png')
                 }
               }              
             }
@@ -52,13 +52,13 @@ export const startTabs = () => Navigation.setRoot({
             },
             {
               component: {
-                id: 'PerspID',
-                name: 'perspectives',
+                id: 'SpeakingID',
+                name: 'Speaking',
                 options: {
                   bottomTab: {
                     fontSize: 12,
-                    text: "Blogs",
-                    icon: require('../assets/img/feedback.png')
+                    text: "Speeches",
+                    icon: require('../assets/img/mic.png')
                   }
                 }
               },

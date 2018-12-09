@@ -54,6 +54,7 @@ class FlatListItem extends Component {
                   date:this.props.item.date, 
                   excerpt:this.props.item.excerpt, 
                   origin_url:this.props.item.origin_url,   
+                  video_iframe:this.props.item.video_iframe,
                 },
                 options: {
                   topBar: {
@@ -132,6 +133,12 @@ class WelcomeScreen extends Component{
                 var author_img = JSON.stringify(posts[x].acf.sidebar[0].image.url)
                 var excerpt = JSON.stringify(posts[x].excerpt.rendered)
                 var origin_url = JSON.stringify(posts[x].guid.rendered)
+                try{
+                    var video_iframe = temp.match(/(<iframe.+?<\/iframe>)/g);
+                    video_iframe = video_iframe.toString()
+                    video_iframe = video_iframe.replace('"','').replace(/[\\]/g,'');
+                }
+                catch(error){var video_iframe = null}
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
@@ -163,6 +170,7 @@ class WelcomeScreen extends Component{
                     "author_img": author_img,
                     "excerpt":excerpt,
                     "origin_url":origin_url,
+                    "video_iframe":video_iframe,
                 });
             }
         }

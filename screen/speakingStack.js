@@ -67,7 +67,12 @@ class speakingStack extends Component{
 		let message = Webview;
 		return(
 			<View style={styles.container}>
-				<Text style={styles.flatListTitleWeb}>
+				<Text style={{    
+					color: 'black',
+				    padding:2,
+				    fontSize:18,
+				    fontWeight:'bold',marginTop:20
+				}}>
 					{this.props.title}
 				</Text>
 				<View style={{flex:1, flexDirection:'column'}}> 
@@ -83,7 +88,7 @@ class speakingStack extends Component{
 					         		flex:1,
 					         		flexDirection:'column',
 					         		height:100,
-					         		marginTop:-30
+					         		marginTop:-10
 					         	}}>
 					              <Text style={styles.webinarDate}>{this.props.author_name}</Text>
 					              <Text style={styles.webinarAuthorName}>{this.props.date}</Text>

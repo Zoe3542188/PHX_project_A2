@@ -3,7 +3,10 @@ import {View,
 		Image,
 		Text,
 		StyleSheet,
-		Button
+		WebView,
+		ScrollView,
+		Dimensions,
+		Linking,
 		} from "react-native";
 import styles from "./style";
 import {
@@ -11,7 +14,9 @@ import {
     Recorder,
     MediaStates
 } from 'react-native-audio-toolkit';  
-import {startStacks, startTabs} from './startMainTab'
+import {Button} from 'react-native-elements';
+import HTML from 'react-native-render-html';
+import {startStacks, startTabs} from './startMainTab';
 import {Navigation} from 'react-native-navigation';
 
 class perspStack extends Component{
@@ -38,22 +43,36 @@ class perspStack extends Component{
 
 	render(){
 		return(
-			<View style={styles.container}>
-				<Text style={styles.flatListTitleWeb}>
+			<View style={styles.container}>	
+				<Text style={{color: 'black',
+							    padding:2,
+							    fontSize:18,
+							    fontWeight:'bold',
+								marginTop:10}}>
 					{this.props.title}
 				</Text>
-	      		<Image
-	      	  		source={{uri:this.props.img_url}}
-	      	  		style={{width:300, height:300, margin:5}}
-	      		/>
-				<Text style = {{margin: 30}}>
-					{this.props.description}
-				</Text>	 
-
-		        <Button
+				<ScrollView style={{top:10,marginBottom:20,height:400}}>
+		      		<Image
+		      	  		source={{uri:this.props.img_url}}
+		      	  		style={{width:330, height:180, borderRadius:10,margin:20}}
+		      		/>	 
+					<View style={{margin:20}}>
+						<HTML 
+							html={this.props.content}
+							tagsStyles = {{p:{fontSize:15},strong:{fontWeight:'bold'},a:{fontStyle: 'italic'}}}
+							onLinkPress={(event, href)=>{Linking.openURL(href)}}
+						/>
+					</View>
+				</ScrollView>
+		       	<Button
+		      	  large
+		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
+		          buttonStyle = {{width: 80, height: 60, bottom:10}}	
+		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
+		      	  backgroundColor="white"
+		          title="Back"
 		          onPress={()=> this.goToScreen()}
-		          title="Go back"
-		        />	        			
+			    />       			
 			</View>
 		);
 	}
