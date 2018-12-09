@@ -66,7 +66,7 @@ export const startTabs = () => Navigation.setRoot({
             {
               component: {
                 id: 'FeedbackID',
-                name: 'Feedback',
+                name: 'Feedback2',
                 options: {
                   bottomTab: {
                     fontSize: 12,

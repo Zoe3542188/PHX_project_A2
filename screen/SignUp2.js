@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Button, TouchableOpacity, Text } from 'react-native';
+import { View, StyleSheet, Button, TouchableOpacity, Text, ScrollView, } from 'react-native';
 
 import styles from "./style";
 
@@ -81,6 +81,7 @@ const formStyles = {
   }
 }
 
+
 const options = {
   fields: {
     email: {
@@ -115,7 +116,16 @@ const options = {
   stylesheet: formStyles,
 };
 
+
 export default class App extends Component {
+  static get options(){
+    return{
+      topBar:{
+        title:{
+          text: 'Sign Up',
+      }},
+    }
+  }
   constructor() {
     super();
     this.state = {
@@ -129,11 +139,43 @@ export default class App extends Component {
   }
 
   SubmitPress() {
-    startTabs();
+    const value = this._form.getValue();
+    if (value === null) { 
+      console.log(value);
+    }
+    else{
+      var all_data = new FormData();
+      all_data.append("input_1.3",value.firstname);
+      all_data.append("input_1.6",value.lastname);
+      all_data.append("input_2",value.email);
+      all_data.append("input_10.3",value.state);
+      all_data.append("input_10.4",value.city);
+      all_data.append("input_10.6",value.country);
+      var url = "https://appbuphx.wpengine.com/newsletter-signup/"
+      fetch(url , {
+        method: 'POST',
+        headers: {
+           Accept: 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+          'Content-Type': 'multipart/form-data',
+        },
+        body: JSON.stringify(all_data),
+      }).then((response) => {
+        if (response.ok) {
+            alert('signup success')
+            return response.json();
+        }
+      }).then((json) => {
+        //alert(JSON.stringify(json));
+      }).catch((error) => {
+        //alert(error);
+      });
+      startTabs();
+    }
   }
  
   render() {
     return (
+      <ScrollView>
       <View style={styles.formcontainer}>
         <Form 
           ref={c => this._form = c}
@@ -149,6 +191,7 @@ export default class App extends Component {
           <Text style={styles.loginText}>Register</Text>
         </TouchableOpacity>
       </View>
+      </ScrollView>
     );
   }
 }

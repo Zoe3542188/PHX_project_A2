@@ -52,7 +52,7 @@ class videoStack extends Component{
 							COMING SOON! This event has not started yet. Please check back at later date or see the website for more information.
 						</Text>					
 			      		<Image
-			      	  		source={{uri:this.props.video_url.replace("\\","")}}
+			      	  		source={{uri:this.props.video_url}}
 			      	  		style={{width:340,height:220,marginTop:5}}
 			      		/>
 			      		</View>

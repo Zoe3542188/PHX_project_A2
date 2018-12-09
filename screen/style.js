@@ -138,26 +138,28 @@ const { StyleSheet } = React;
   },  
   formcontainer: {
     justifyContent: 'center',
-    marginTop: 50,
+    alignItems:'center',
     padding: 20,
     backgroundColor: '#ffffff',
   },
   loginScreenButton:{
-    marginRight:0,
-    marginLeft:0,
     marginTop:10,
+    marginLeft:200,
     paddingTop:10,
     paddingBottom:10,
-    backgroundColor:'#2ec1dc',
+    backgroundColor:'white',
     borderRadius:10,
     borderWidth: 1,
-    borderColor: '#fff'
+    borderColor: 'black',
+    height:50,
+    width:120,
   },
   loginText:{
-    color:'#fff',
+    color:'black',
     textAlign:'center',
     paddingLeft : 10,
-    paddingRight : 10
+    paddingRight : 10,
+    paddingTop:5
   },
   webinarAuthorName: {
     color: '#1f201f',
