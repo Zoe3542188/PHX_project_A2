@@ -12,7 +12,7 @@ import {View,
 import styles from "./style";
 import { Navigation } from "react-native-navigation";
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 export const startVideoStack = () => Navigation.setRoot({
   root: {

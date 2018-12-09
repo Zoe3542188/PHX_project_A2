@@ -33,7 +33,7 @@ class Feedback2 extends Component{
           ref={(ref) => this.myWebView = ref} 
           source={{uri:this.state.url}}
           contentInset = {{top:0,bottom:0}}
-          style={{marginTop:-50,marginBottom:-455}}
+          style={{marginTop:-60,marginBottom:-455}}
         />
     );
   }
