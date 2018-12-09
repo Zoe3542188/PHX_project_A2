@@ -29,6 +29,7 @@ PHX_project_A2
 9. react native file system [react-native-fs](https://github.com/itinance/react-native-fs)
 10. react native forms [tcomb-form-native](https://github.com/gcanti/tcomb-form-native)
 11. react native swipeout [react-native-swipeout](https://github.com/dancormier/react-native-swipeout)
+12. react-native-render-html [react-native-render-html](https://github.com/archriss/react-native-render-html)
 
 #### Useful link: general information about installing [libraries with native dependencies](http://facebook.github.io/react-native/docs/linking-libraries-ios.html#content)
 
