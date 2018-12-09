@@ -3,16 +3,17 @@ import {View,
 		Image,
 		Text,
 		StyleSheet,
-		Linking,
-		WebView,
-		ScrollView,
-		ActionSheetIOS,
+		Button
 		} from "react-native";
 import styles from "./style";
-import {Button} from 'react-native-elements';
+import {
+    Player,
+    Recorder,
+    MediaStates
+} from 'react-native-audio-toolkit';  
+import {startStacks, startTabs} from './startMainTab'
 import {Navigation} from 'react-native-navigation';
-import Icon from 'react-native-vector-icons/Feather';
-import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 class perspStack extends Component{
 	static get options() {
 	    return {
@@ -23,90 +24,36 @@ class perspStack extends Component{
 	      }
 	    };
 	  }
-	  
-  	goToScreen = () =>{
-		Navigation.dismissModal(this.props.componentId);
-	}
+	// goToScreen = (screenName) =>{
+	// 	Navigation.push(this.props.componentId,{
+	// 		component:{
+	// 			name: screenName
+	// 		}
+	// 	})
+	// }
 
-	goToVideo = (screenName) =>{
-	Navigation.push(this.props.componentId,{
-		component:{
-			name: 'perspVideo',
-			passProps: {
-				video_iframe:this.props.video_iframe
-			}
-		}
-	})
-	}
-  browser() {
-  	Linking.openURL(this.props.origin_url);
+  goToScreen = () =>{
+		Navigation.dismissModal(this.props.componentId);
   }
 
-  showShareActionSheet () {
-    ActionSheetIOS.showShareActionSheetWithOptions({
-		      url: this.props.origin_url,
-		      message: this.props.title,
-		      subject: 'phxWebinar',
-		    },
-		    function(err){alert(err);},
-		    function(e){});
-	}
 	render(){
-		//const tempFrame = trim(this.props.video_iframe.replace('\"',''))
-		const Webview =  <WebView
-							originWhitelist={['*']}
-			      	  		source={{html:this.props.video_iframe}}
-			      	  		style={{width:320,height:200, marginTop:30,marginLeft:20}}
-			      	  		scrollEnable = {false}
-			      	  		scalesPageToFit = {false}
-			      		/>;						
-		let message = Webview;
 		return(
 			<View style={styles.container}>
 				<Text style={styles.flatListTitleWeb}>
 					{this.props.title}
 				</Text>
-				<View style={{flex:1, flexDirection:'column'}}> 
-			      		<ScrollView style={{flex:1, flexDirection:'column', marginBottom:10}}>
-			      			<View style={{
-				          	  	flex:1,
-				          	  	flexDirection:'row'}}> 
-				          		<Image
-				          	  		source={{uri:this.props.author_img}}
-				          	  		style={{width:100, height:100, borderRadius:50, left:20, top:10}}
-				          		/>
-					         	<View style={{
-					         		flex:1,
-					         		flexDirection:'column',
-					         		height:100,
-					         		marginTop:-30
-					         	}}>
-					              <Text style={styles.webinarDate}>{this.props.author_name}</Text>
-					              <Text style={styles.webinarAuthorName}>{this.props.date}</Text>
-					              <View style={{flex: 1,flexDirection:'row'}}>
-								   			  <MIcon style={{left:30,top:35}} name="apple-safari" size={30} color="#383838" onPress={()=>this.browser()}/>
-								   			 	<Icon style={{left:45,top:35}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
-								   			 </View>
-					            </View>
-				            </View>
-				            <View style={{}}>{message}</View>
-				            <View style={{backgroundColor:"#E3EAE7", marginTop:35,marginLeft:20,marginRight:20, borderRadius:10}}>
-				            	<Text style={styles.authorDescription}>{this.props.author_description}</Text>
-				            </View>
-				            <View style={{marginTop:10,marginLeft:20,marginRight:20}}>
-				            <Text style={styles.authorDescription}>"{this.props.excerpt}"</Text>
-				            </View>
-			      			</ScrollView>
-	      		</View>
-			    <Button
-		      	  large
-		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
-		          buttonStyle = {{width: 80, height: 60, bottom:10}}	
-		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
-		      	  backgroundColor="white"
-		          title="Back"
+	      		<Image
+	      	  		source={{uri:this.props.img_url}}
+	      	  		style={{width:300, height:300, margin:5}}
+	      		/>
+				<Text style = {{margin: 30}}>
+					{this.props.description}
+				</Text>	 
+
+		        <Button
 		          onPress={()=> this.goToScreen()}
-			    />
+		          title="Go back"
+		        />	        			
 			</View>
 		);
 	}

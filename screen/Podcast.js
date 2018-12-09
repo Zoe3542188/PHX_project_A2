@@ -27,7 +27,7 @@ export const startAudioStack = () => Navigation.setRoot({
       children: [
         {
           component: {
-            name: 'displayPodList',
+            name: 'Podcast',
           }
         }
     ],
@@ -58,7 +58,8 @@ class FlatListItem extends Component {
               podcast_url: this.props.item.podcast_url,
               description: this.props.item.description,
               itunes_url: this.props.item.itunes_url, 
-              file_name: this.props.item.file_name,             
+              file_name: this.props.item.file_name,     
+              origin_url:this.props.item.origin_url,        
             },
             options: {
               topBar: {
@@ -130,6 +131,8 @@ class WelcomeScreen extends Component{
                 var img_url = img_url_raw.match(/\"(\S*)\"/)[1];
                 var itunes = temp.match(/itunes(\S*)\"/)[1];
                 var itunes_url = "https://itunes"+itunes;
+                var origin_url = JSON.stringify(posts[x].guid.rendered)
+                origin_url = origin_url.replace(/^\"|\"$/g,'');
                 name = name.replace(/^\"|\"$/g,'');
                 name = name.replace(/[\\]/g,'');
                 short_title = short_title.replace(/^\"|\"$/g,'');
@@ -146,7 +149,8 @@ class WelcomeScreen extends Component{
                     "podcast_url": podcast_url,
                     "short_title": short_title,
                     "itunes_url": itunes_url,
-                    "file_name": file_name,                    
+                    "file_name": file_name,  
+                    "origin_url":origin_url,                  
                 });
             }
         }
@@ -165,7 +169,7 @@ class WelcomeScreen extends Component{
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
             <View style={styles.headerView}>
-              <Text style={styles.headerFont}>PHX Podcast</Text>
+              <Text style={styles.headerFont}>Podcasts</Text>
             </View>
             <FlatList 
                 data={this.state.data}

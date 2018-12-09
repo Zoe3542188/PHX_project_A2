@@ -13,12 +13,12 @@ import {Button} from 'react-native-elements';
 import {Navigation} from 'react-native-navigation';
 import Icon from 'react-native-vector-icons/Feather';
 import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
-class videoStack extends Component{
+class speakingStack extends Component{
 	static get options() {
 	    return {
 	      topBar: {
 	        title: {
-	          text: 'Webinar Components'
+	          text: 'Practically Speaking'
 	        },
 	      }
 	    };
@@ -26,6 +26,17 @@ class videoStack extends Component{
 	  
   	goToScreen = () =>{
 		Navigation.dismissModal(this.props.componentId);
+	}
+
+	goToVideo = (screenName) =>{
+	Navigation.push(this.props.componentId,{
+		component:{
+			name: 'perspVideo',
+			passProps: {
+				video_iframe:this.props.video_iframe
+			}
+		}
+	})
 	}
   browser() {
   	Linking.openURL(this.props.origin_url);
@@ -35,10 +46,9 @@ class videoStack extends Component{
   	Linking.openURL('https://populationhealthexchange.org/contact-us/')
   }
   
-
   showShareActionSheet () {
     ActionSheetIOS.showShareActionSheetWithOptions({
-		      url: this.props.video_url,
+		      url: this.props.origin_url,
 		      message: this.props.title,
 		      subject: 'phxWebinar',
 		    },
@@ -46,41 +56,22 @@ class videoStack extends Component{
 		    function(e){});
 	}
 	render(){
+		//const tempFrame = trim(this.props.video_iframe.replace('\"',''))
 		const Webview =  <WebView
-			      	  		source={{uri:this.props.video_url}}
-			      	  		style={{width:370,height:200}}
-			      	  		contentInset={{top:5,bottom:340}}
+							originWhitelist={['*']}
+			      	  		source={{html:this.props.video_iframe}}
+			      	  		style={{width:320,height:200, marginTop:30,marginLeft:20}}
 			      	  		scrollEnable = {false}
-			      		/>;
-		const Upcoming =<View style={styles.upComingDescription}>
-						<Text> 
-							COMING SOON! This event has not started yet. Please check back at later date or see the website for more information.
-						</Text>					
-			      		<Image
-			      	  		source={{uri:this.props.video_url}}
-			      	  		style={{width:340,height:220,marginTop:5}}
-			      		/>
-			      		</View>
-							
-		let message;
-		var flag = this.props.video_url.includes("jpg");
-		if(flag){
-			message = Upcoming;
-		}
-		else{
-			message = Webview;
-		}
+			      	  		scalesPageToFit = {false}
+			      		/>;						
+		let message = Webview;
 		return(
 			<View style={styles.container}>
 				<Text style={styles.flatListTitleWeb}>
 					{this.props.title}
 				</Text>
 				<View style={{flex:1, flexDirection:'column'}}> 
-					<View>
-			      		{message}
-			      	</View>
-			      	<View style={{marginTop:-330, height:320, width:370}}>
-			      		<ScrollView style={{flex:1, flexDirection:'column'}}>
+			      		<ScrollView style={{flex:1, flexDirection:'column', marginBottom:10}}>
 			      			<View style={{
 				          	  	flex:1,
 				          	  	flexDirection:'row'}}> 
@@ -91,7 +82,8 @@ class videoStack extends Component{
 					         	<View style={{
 					         		flex:1,
 					         		flexDirection:'column',
-					         		height:100
+					         		height:100,
+					         		marginTop:-30
 					         	}}>
 					              <Text style={styles.webinarDate}>{this.props.author_name}</Text>
 					              <Text style={styles.webinarAuthorName}>{this.props.date}</Text>
@@ -102,6 +94,7 @@ class videoStack extends Component{
 								   			 </View>
 					            </View>
 				            </View>
+				            <View style={{}}>{message}</View>
 				            <View style={{backgroundColor:"#E3EAE7", marginTop:35,marginLeft:20,marginRight:20, borderRadius:10}}>
 				            	<Text style={styles.authorDescription}>{this.props.author_description}</Text>
 				            </View>
@@ -109,7 +102,6 @@ class videoStack extends Component{
 				            <Text style={styles.authorDescription}>"{this.props.excerpt}"</Text>
 				            </View>
 			      			</ScrollView>
-		      		</View>
 	      		</View>
 			    <Button
 		      	  large
@@ -125,4 +117,4 @@ class videoStack extends Component{
 	}
 }
 
-export default videoStack;
+export default speakingStack;

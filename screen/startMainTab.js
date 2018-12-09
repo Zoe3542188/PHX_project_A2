@@ -10,15 +10,15 @@ export const startTabs = () => Navigation.setRoot({
               children: [
               {
                 component: {
-                  id: 'PerspID',
-                  name: 'Main',
+                  id: 'SpeakingID',
+                  name: 'Speaking',
                 },
               },
            ],
               options: {
                 bottomTab: {
                   fontSize: 12,
-                  text: 'Main',
+                  text: 'Speakings',
                   icon: require('../assets/img/home.png')
                 }
               }              
@@ -40,7 +40,7 @@ export const startTabs = () => Navigation.setRoot({
             {
               component: {
                 id: 'PodcastID',                
-                name: 'displayPodList',
+                name: 'Podcast',
                 options: {
                   bottomTab: {
                     text: 'Podcasts',
@@ -50,6 +50,19 @@ export const startTabs = () => Navigation.setRoot({
                 }
               },
             },
+            {
+              component: {
+                id: 'PerspID',
+                name: 'perspectives',
+                options: {
+                  bottomTab: {
+                    fontSize: 12,
+                    text: "Blogs",
+                    icon: require('../assets/img/feedback.png')
+                  }
+                }
+              },
+            }, 
            {
               component: {
                 id: 'DownloadsID',
@@ -62,20 +75,7 @@ export const startTabs = () => Navigation.setRoot({
                   }
                 }
               },
-            },             
-            {
-              component: {
-                id: 'FeedbackID',
-                name: 'Feedback2',
-                options: {
-                  bottomTab: {
-                    fontSize: 12,
-                    text: "Contact us",
-                    icon: require('../assets/img/feedback.png')
-                  }
-                }
-              },
-            },             
+            },                         
           ],
         }
       }

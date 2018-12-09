@@ -37,7 +37,7 @@ export class FlatListItem extends Component {
       stack: {
         children: [{
           component: {
-            name: 'perspStack',
+            name: 'speakingStack',
             passProps: {
               title: this.props.item.title,
               img_url: this.props.item.img_url,                  
@@ -53,7 +53,7 @@ export class FlatListItem extends Component {
             options: {
               topBar: {
                 title: {
-                  text: 'Perspectives'
+                  text: 'Practically Speaking'
                 }
               }
             }
@@ -90,7 +90,7 @@ class WelcomeScreen extends Component{
     return{
       topBar:{
         title:{
-          text: 'PHX Perspectives',
+          text: 'Practically Speaking',
       }},
     }
   }

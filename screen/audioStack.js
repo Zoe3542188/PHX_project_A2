@@ -21,7 +21,7 @@ import Icon from 'react-native-vector-icons/Feather';
 import ZIcon from 'react-native-vector-icons/Zocial'
 import {Button} from 'react-native-elements';
 import {Downloads} from './Downloads.js'
-//URL = "https://media.blubrry.com/free_associations/s/dts.podtrac.com/redirect.mp3/populationhealthexchange.org/wp-content/podcasts/fa/Free_Associations_Episode_36.mp3"
+import MIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 class audioStack extends Component{
 	constructor(){
@@ -85,7 +85,12 @@ class audioStack extends Component{
   itunes() {
   	Linking.openURL(this.props.itunes_url);
   }
-
+  browser() {
+  	Linking.openURL(this.props.origin_url);
+  }
+  contact(){
+  	Linking.openURL('https://populationhealthexchange.org/contact-us/')
+  }
   showShareActionSheet () {
     ActionSheetIOS.showShareActionSheetWithOptions({
 		      url: this.props.podcast_url,
@@ -126,9 +131,11 @@ class audioStack extends Component{
 					      />
 				      </View>
 				      <View style={{flex: 1,flexDirection:'row'}}>
-		   			  	<ZIcon style={{left:30,top:-5}} name="itunes" size={30} color="#383838" onPress={()=>this.itunes()}/>
-		   			 	<Icon style={{left:50}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
-		   			 	<Icon style={{left:70}} name="download" size={25} color="#383838" onPress={()=>this.download()}/>
+		   			  	<ZIcon style={{left:30,top:-5}} name="itunes" size={28} color="#383838" onPress={()=>this.itunes()}/>
+		   			  	 <MIcon style={{left:50,top:-2}} name="apple-safari" size={32} color="#383838" onPress={()=>this.browser()}/>
+		   			 	<Icon style={{left:70}} name="share-2" size={25} color="#383838" onPress={()=>this.showShareActionSheet()}/>
+		   			 	<Icon style={{left:90}} name="download" size={25} color="#383838" onPress={()=>this.download()}/>
+		   			 	<Icon style={{left:110}} name="mail" size={25} color="#383838" onPress={()=>this.contact()}/>
 		   			 </View>
 		   			  <Text style={{marginLeft:12,marginRight:12,fontSize:16,fontStyle:'italic'}}>"{this.props.description}"</Text>
 		   			</ScrollView>

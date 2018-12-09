@@ -180,7 +180,7 @@ class WelcomeScreen extends Component{
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
             <View style={styles.headerView}>
-              <Text style={styles.headerFont}>PHX Webinars</Text>
+              <Text style={styles.headerFont}>Webinars</Text>
             </View>
             <FlatList 
                 data={this.state.data}
