@@ -57,7 +57,7 @@ export const startTabs = () => Navigation.setRoot({
                 options: {
                   bottomTab: {
                     fontSize: 12,
-                    text: "Speeches",
+                    text: "Practically",
                     icon: require('../assets/img/mic.png')
                   }
                 }

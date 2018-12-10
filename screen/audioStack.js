@@ -56,7 +56,7 @@ class audioStack extends Component{
   }
 
   download() {
-  		Alert.alert('Download start','Please wait for a while...')
+  		Alert.alert('Download started','Refresh downloads tab to view file')
 		const dirs = RNFetchBlob.fs.dirs
 		RNFetchBlob.config({
 		    // add this option that makes response data to be stored as a file,
@@ -144,7 +144,7 @@ class audioStack extends Component{
 				    <Button
 			      	  large
 			          buttonStyle = {{left:130,width: 80, height: 60}}	
-			          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
+			          textStyle={{fontSize: 15, color:'#0693e3'}}	      	  		      	  
 			      	  backgroundColor="white"
 			          title="Back"
 			          onPress={()=> this.goToScreen()}

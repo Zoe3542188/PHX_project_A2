@@ -75,11 +75,11 @@ class FlatListItem extends Component {
 
   render() {   
   	const initial = <View style={{flex:1, flexDirection:'row'}}>   		
-			  	<Icon style={{left:70,top:35}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stopFile()}/>
+			  	<Icon style={{left:70,top:35}} name="stop-circle" size={25} color="#383838" onPress={()=>this.stopFile()}/>
  					<Icon style={{left:90,top:35}} name="play" size={25} color="#383838" onPress={()=>this.playFile()}/>					        
         </View>;
     const pause = <View style={{flex:1, flexDirection:'row'}}>   		
-			  	<Icon style={{left:70,top:35}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stopFile()}/>
+			  	<Icon style={{left:70,top:35}} name="stop-circle" size={25} color="#383838" onPress={()=>this.stopFile()}/>
  					<Icon style={{left:90,top:35}} name="pause" size={25} color="#383838" onPress={()=>this.pauseFile()}/>					        
         </View>;
     let message;
@@ -93,7 +93,7 @@ class FlatListItem extends Component {
 		        onPress:()=>{   		
 		        	Alert.alert(
 			    			'Delete Podcast',
-			    			'Are you sure you want to delete?',[
+			    			'Are you sure you want to delete this file?',[
 			    				{text:'No',onPress:()=>console.log('cancle'),style:'cancle'},
 			    				{text:'Yes',onPress:()=>(this.deletion ())},
     						],
@@ -108,7 +108,8 @@ class FlatListItem extends Component {
 				<View style={{
           flex: 1,
           flexDirection:'column',
-          alignItems: 'center'
+          alignItems: 'center',
+          height : 30,
         	}}>
         	<Text>Pull to Refresh and Swipe to Delete</Text>
         </View>
@@ -228,7 +229,7 @@ class Downloads extends Component{
 		return(
 			<View style={{flex: 1, marginTop: 22}}>
 	            <View style={styles.headerView}>
-	              <Text style={styles.headerFont}>Local Podcasts</Text>
+	              <Text style={styles.headerFont}>Downloaded Podcasts</Text>
 	            </View>
 	            <View style={{flex:1,Top:-100}}>
 	            <FlatList 

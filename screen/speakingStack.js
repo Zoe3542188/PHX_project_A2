@@ -112,7 +112,7 @@ class speakingStack extends Component{
 		      	  large
 		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
 		          buttonStyle = {{width: 80, height: 60, bottom:10}}	
-		          textStyle={{fontSize: 15, color:'black'}}	      	  		      	  
+		          textStyle={{fontSize: 15, color:'#0693e3'}}	      	  		      	  
 		      	  backgroundColor="white"
 		          title="Back"
 		          onPress={()=> this.goToScreen()}
