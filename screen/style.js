@@ -175,6 +175,8 @@ const { StyleSheet } = React;
     fontWeight:'bold',
     bottom:-40,
     left:30,
+    right:10,
+    marginRight:60
   },
   authorDescription:{
     color: 'black',

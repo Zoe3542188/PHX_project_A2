@@ -120,13 +120,13 @@ class FlatListItem extends Component {
           flexDirection:'column',
         	}}>
         <Swipeout style={{
-        	backgroundColor:'white',
+          backgroundColor: this.props.index % 2 == 0 ? 'white': '#2ec1dc',
           borderStyle:'solid',
-          borderWidth:0.2,
-          borderBottomColor:'black',
-          borderTopColor:'white',
-          borderRadius:5,}}
-          backgroundColor='white' {...swipeSettings}>
+          borderWidth:0.5,
+          borderBottomColor:'#6B6D6C',
+          borderTopColor:'#6B6D6C',
+          borderRadius:0,}}
+          {...swipeSettings}>
           <View style={{
       	  	flex:1,
       	  	flexDirection:'row'}}> 

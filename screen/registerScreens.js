@@ -25,6 +25,7 @@ export function registerScreens() {
 	Navigation.registerComponent('perspVideo', () => require('./perspVideo').default);
 	Navigation.registerComponent('speakingStack',()=>require('./speakingStack').default);
 	Navigation.registerComponent('perspectives',()=>require('./perspectives').default);
+	//Navigation.registerComponent('perspDetails',()=>require('./perspDetails').default);
 	//Navigation.registerComponent('testAudio', () => require('./testAudio').default);
 }
 
@@ -52,4 +53,5 @@ import perspVideo from "./perspVideo.js";
 import speakingStack from "./speakingStack.js";
 import perspectives from "./perspectives.js";
 import Podcast from "./Podcast.js";
+//import perspDetails from "./perspDetails.js";
 //import testAudio from "./testAudio.js";
