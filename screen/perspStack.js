@@ -48,7 +48,7 @@ class perspStack extends Component{
   showShareActionSheet () {
     ActionSheetIOS.showShareActionSheetWithOptions({
 		      url: this.props.origin_url,
-		      message: this.props.title,
+		      message: 'Check out this article from PHX:\n\n'+this.props.title+'\n',
 		      subject: 'phx Perspectives',
 		    },
 		    function(err){alert(err);},

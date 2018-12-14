@@ -39,7 +39,7 @@ class videoStack extends Component{
   showShareActionSheet () {
     ActionSheetIOS.showShareActionSheetWithOptions({
 		      url: this.props.video_url,
-		      message: this.props.title,
+		      message: 'Check out this webinar from PHX:\n\n'+this.props.title+'\n',
 		      subject: 'phxWebinar',
 		    },
 		    function(err){alert(err);},

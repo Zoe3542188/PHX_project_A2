@@ -100,7 +100,7 @@ class WelcomeScreen extends Component{
 
         fetchData = async () =>{
         //response
-        const response = await fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts?per_page=60');
+        const response = await fetch('https://populationhealthexchange.org/wp-json/wp/v2/posts?per_page=100');
         //posts
         const posts = await response.json();
         var x;

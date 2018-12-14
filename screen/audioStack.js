@@ -94,7 +94,7 @@ class audioStack extends Component{
   showShareActionSheet () {
     ActionSheetIOS.showShareActionSheetWithOptions({
 		      url: this.props.podcast_url,
-		      message: this.props.file_name,
+		      message: 'Check out this podcast from PHX:\n\n'+this.props.title+'\n',
 		      subject: 'phxPodcast',
 		    },
 		    function(err){alert(err);},
@@ -107,12 +107,12 @@ class audioStack extends Component{
   	render() {
   		const initial = <View style={{backgroundColor:'#27deff',flex:1, flexDirection:'row'}}>
   											<Text style={{left:10,top:30, fontWeight:'bold',fontSize:15}}>Stream podcast</Text>
-  											<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
+  											<Icon style={{left:170,top:25}} name="stop-circle" size={25} color="#383838" onPress={()=>this.stop()}/>
 							   				<Icon style={{left:190,top:25}} name="play" size={25} color="#383838" onPress={()=>this.stream()}/>	
 											</View>;
 		const pause = <View style={{backgroundColor:'#27deff',flex:1, flexDirection:'row'}}>
 									   	<Text style={{left:10,top:30, fontWeight:'bold',fontSize:15}}>Stream podcast</Text>
-									   	<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
+									   	<Icon style={{left:170,top:25}} name="stop-circle" size={25} color="#383838" onPress={()=>this.stop()}/>
 						   				<Icon style={{left:190,top:25}} name="pause" size={25} color="#383838" onPress={()=>this.pause()}/>
 										</View>;
 			let message;
