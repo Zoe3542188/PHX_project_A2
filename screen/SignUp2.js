@@ -142,6 +142,7 @@ export default class App extends Component {
     const value = this._form.getValue();
     if (value === null) { 
       console.log(value);
+      startTabs();
     }
     else{
       var all_data = new FormData();

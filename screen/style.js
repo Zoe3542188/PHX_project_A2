@@ -119,7 +119,7 @@ const { StyleSheet } = React;
     marginBottom: 5,
   },  
   SubmitButton: {
-    backgroundColor: '#3897f1',
+    backgroundColor: '#27deff',
     borderRadius: 5,
     height: 45,
     marginTop: 10,

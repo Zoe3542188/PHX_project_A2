@@ -119,9 +119,9 @@ class perspStack extends Component{
 					</View>
 				</ScrollView>
 		       	<Button
-		      	  large
+		      	  large	      	  
 		      	  icon={{name: 'download', type: 'font-awesome', size:12}}
-		          buttonStyle = {{width: 80, height: 60, bottom:10}}	
+		          buttonStyle = {{left:-10,width: 80, height: 60}}	
 		          textStyle={{fontSize: 15, color:'#0693e3'}}	      	  		      	  
 		      	  backgroundColor="white"
 		          title="Back"

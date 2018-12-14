@@ -105,13 +105,13 @@ class audioStack extends Component{
   }
 
   	render() {
-  		const initial = <View style={{backgroundColor:'white',flex:1, flexDirection:'row'}}>
-  											<Text style={{left:120,top:30, fontWeight:'bold',fontSize:15}}>{this.props.short_title}</Text>
+  		const initial = <View style={{backgroundColor:'#27deff',flex:1, flexDirection:'row'}}>
+  											<Text style={{left:10,top:30, fontWeight:'bold',fontSize:15}}>Stream podcast</Text>
   											<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
 							   				<Icon style={{left:190,top:25}} name="play" size={25} color="#383838" onPress={()=>this.stream()}/>	
 											</View>;
-		const pause = <View style={{backgroundColor:'white',flex:1, flexDirection:'row'}}>
-									   	<Text style={{left:120,top:30, fontWeight:'bold',fontSize:15}}>{this.props.short_title}</Text>
+		const pause = <View style={{backgroundColor:'#27deff',flex:1, flexDirection:'row'}}>
+									   	<Text style={{left:10,top:30, fontWeight:'bold',fontSize:15}}>Stream podcast</Text>
 									   	<Icon style={{left:170,top:25}} name="refresh-ccw" size={25} color="#383838" onPress={()=>this.stop()}/>
 						   				<Icon style={{left:190,top:25}} name="pause" size={25} color="#383838" onPress={()=>this.pause()}/>
 										</View>;

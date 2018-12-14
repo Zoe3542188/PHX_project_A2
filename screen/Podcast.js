@@ -64,7 +64,7 @@ class FlatListItem extends Component {
             options: {
               topBar: {
                 title: {
-                  text: "podcast"
+                  text: this.props.item.short_title
                 }
               }
             }
