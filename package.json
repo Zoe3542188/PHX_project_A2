@@ -10,7 +10,7 @@
     "base-64": "^0.1.0",
     "material-design-icons": "^3.0.1",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.3",
+    "react-native": "0.70.4",
     "react-native-app-intro-slider": "^1.0.1",
     "react-native-audio-streamer": "0.0.9",
     "react-native-audio-toolkit": "^1.0.6",
